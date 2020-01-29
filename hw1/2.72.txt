@@ -1,0 +1,22 @@
+2.72:
+//---------------------------------------------//
+//The following displays the code snippit for 
+//the benefit of the reader
+//---------------------------------------------//
+
+//---------------------------------------------//
+A)  The code written displays the issue of always copying the value (val) even if the input memory size is too small.
+    This is due to the fact that sizeof() returns an unsigned integer. As a result unsigned arithmetic is used to
+    evaluate the expression "maxbytes - sizeof(val)". The reuslting integer is an unsigned integer and is bound to 
+    always be greater than or equal to zero. As this value is checked if it is greater than or equal to 0, therefore
+    the program will always copy the value stored in val to the buffer (buf).
+B)  The following code is a revised version of the code to ensure that we copy to the buffer only when there is enough
+    space:
+
+        void copy_int (int val,void* buf, int maxbytes)
+        {
+            if(maxbytes - (signed int) sizeof(val) >= 0) //cast sizeof to give a signed value. signed arithmetic will work properly
+            {
+                memcpy(buf, (void*) & val, sizeof(val));
+            }
+        }
