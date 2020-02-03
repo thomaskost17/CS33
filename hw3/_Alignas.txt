@@ -1,0 +1,14 @@
+sizeof (struct { short a; char _Alignas (8) b; char c; })
+
+Result: 16
+This will return 16 because of the use of the _Alignas function. Becuase this function forces the alignment of the second element to be 8 this means that the address of b must
+be a multiple of 8. As a result this means that there must be padding after a. After b, C can immediately follow as they are both chars. But, gcc will add padding after the element c
+to ensure that the resulting struct is of alignemet 8. This is done to ensure that arrays of the struct will continue to be able to have the same alignemnt when they are placed
+sequentially in memory. 
+
+Consider: sizeof (union { short a; char _Alignas (8) b; char c; })
+
+Result: 8
+This will return 8 because in a union the bytes of each element are allowed to overlap. So the untion will have a two byte element and two one byte elements overlapping. But,
+becuase the element b now has alignement 8, there must be padding added to the end of the union to ensure that arrays of the union can have the same alignment. 
+so there will be two bytes that could potentially carry memory followed by 6 bytes of padding, resulting in an 8 byte element. 

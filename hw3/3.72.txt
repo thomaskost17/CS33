@@ -1,0 +1,19 @@
+A: 
+    The computation for s2 starts at line 5. This starts out by calculating the value of 30 + 8*n. This value is then bitwise anded with -16, which 
+    removes the bottom 4 bits of the value calculated. This has the effect of only allowing allocation to take place in integer multiples of 32 bytes. 
+    This value is then subtracted from %rsp, which has the effect of growing the stack by an integer multiple of 32 bytes. if all 32 bytes are not needed we have a gap,
+    if they are we do not. But, regardless the alignement is preserved for long pointers (of alignment 8).
+B:
+    The computation for p starts of line 8. This computation is primarily to ensure the correct alignment of p. This is done by taking the value of the statring address, adding 15 to
+    determine wether there should or should not be an extra space e2. The value is then anded with -16, removing the bottom 4 bits and ensuring that the address is an integer multiple of 32. 
+    This is now the address of p[0]. This computation essentially shifts p[0] to the nearest integer multiple of 32, garunteeing the array an alignemnt of 8. 
+C:
+    //note this is for minimum e1
+    n_max = 1 +4m :m integer 0,1,2,...
+    s1_max = k : k%8 == 0
+    n_min = 4*m :m integer 0,1,2,...
+    s1_min = k : k%8 ==0
+D: 
+    This code makes no garuntees of the  alignement for s2, as it is dependent on the previous state of the stack. However it does garuntee an alignemnt of 8 for p. This is because s2 is forced
+    to the same alignment of s1, which is all dependent on the previous state of the stack. However, because p is ensured to be a multiple of 32 for its address, this ensures that it has an alignemnt
+    of 8. 

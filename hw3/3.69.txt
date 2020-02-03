@@ -1,0 +1,23 @@
+CNT = 7
+
+Explaination for CNT:
+    We can find the value of CNT through the first few machine instructions. Line 2 and 3 of the assembly code find the integer before and after the array of 
+    a_struct's. These addresses are 288 bytes apart. We can note later in line 6 of the assembly code that the starting value of the array of a_struct elements
+    appears 8 bytes after the start of &bp. Because of this we know that the alignment of our structrue must be 8. We can also extrapolate from lines 4,5, and 6 
+    that the address of the ith element of the array of a_structs is 40*i + &bp + 8. This suggests that the first int takes up 8 bits with its padding, and that
+    successive element of a_struct takes up 40 bytes. As the distance between the two ints of b_struct are 288 bytes apart, 8 of which are used up by the first integer
+    we know that the array of a_struct's takes up 280 bytes. This means that there must be 7 elements of a_struct in the array, and therefore CNT is 7. 
+
+struct a_struct 
+{
+    long idx;
+    long x[4];
+};
+
+Explaination for a_struct structure:
+    Note that for this we are assuming that x and idx are the only elements in the struct. Line 6 moves the first element of a_struct into %rdx, this register is then used later to jump to
+    the index of a value offset by 8 bytes past the start of the pointer we have generated to a_struct. This means that the element stored in the first position of the a_struct element must be 
+    an 8 byte long that is idx. As the size of our struct is 40, and based on the 7th and 8th lines of the assembly language we can see that we are hopping by 8*idx to find the correct element 
+    of x to set to n (done in line 8). As a result we know that the rest of the element is an array of longs, so it must contain 4 elements (as a 40 byte long struct can have a max of 5 values 
+    that are 8 bytes long). Additionally, because the index value (idx) was placed in order before the array, we know that the declaration of the struct must have declared the idx value before
+    the x array.
