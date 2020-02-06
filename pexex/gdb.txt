@@ -1,0 +1,1880 @@
+0x000000000054ddd3	2950	  return arith_driver (Amult, nargs, args);
+   0x000000000054ddd0 <Ftimes+0>:	48 89 f2	mov    %rsi,%rdx
+=> 0x000000000054ddd3 <Ftimes+3>:	48 89 fe	mov    %rdi,%rsi
+   0x000000000054ddd6 <Ftimes+6>:	bf 02 00 00 00	mov    $0x2,%edi
+   0x000000000054dddb <Ftimes+11>:	e9 a0 fd ff ff	jmpq   0x54db80 <arith_driver>
+0x000000000054ddd6	2950	  return arith_driver (Amult, nargs, args);
+   0x000000000054ddd0 <Ftimes+0>:	48 89 f2	mov    %rsi,%rdx
+   0x000000000054ddd3 <Ftimes+3>:	48 89 fe	mov    %rdi,%rsi
+=> 0x000000000054ddd6 <Ftimes+6>:	bf 02 00 00 00	mov    $0x2,%edi
+   0x000000000054dddb <Ftimes+11>:	e9 a0 fd ff ff	jmpq   0x54db80 <arith_driver>
+0x000000000054dddb	2950	  return arith_driver (Amult, nargs, args);
+   0x000000000054ddd0 <Ftimes+0>:	48 89 f2	mov    %rsi,%rdx
+   0x000000000054ddd3 <Ftimes+3>:	48 89 fe	mov    %rdi,%rsi
+   0x000000000054ddd6 <Ftimes+6>:	bf 02 00 00 00	mov    $0x2,%edi
+=> 0x000000000054dddb <Ftimes+11>:	e9 a0 fd ff ff	jmpq   0x54db80 <arith_driver>
+arith_driver (code=Amult, nargs=2, args=0x7fffffffc620) at ../../emacs-26.3/src/data.c:2791
+2791	  switch (code)
+=> 0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db82	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+=> 0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db84	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+=> 0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db87	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+=> 0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db89	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+=> 0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db8b	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+=> 0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db8e	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+=> 0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db8f	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+=> 0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db90	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+=> 0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db94	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+=> 0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db97	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+=> 0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054dc58	2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dc48 <arith_driver+200>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dc4b <arith_driver+203>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dc4e <arith_driver+206>:	74 cd	je     0x54dc1d <arith_driver+157>
+   0x000000000054dc50 <arith_driver+208>:	eb 90	jmp    0x54dbe2 <arith_driver+98>
+   0x000000000054dc52 <arith_driver+210>:	66 0f 1f 44 00 00	nopw   0x0(%rax,%rax,1)
+=> 0x000000000054dc58 <arith_driver+216>:	31 ed	xor    %ebp,%ebp
+   0x000000000054dc5a <arith_driver+218>:	83 ff 01	cmp    $0x1,%edi
+   0x000000000054dc5d <arith_driver+221>:	40 0f 97 c5	seta   %bpl
+   0x000000000054dc61 <arith_driver+225>:	e9 47 ff ff ff	jmpq   0x54dbad <arith_driver+45>
+   0x000000000054dc66 <arith_driver+230>:	66 2e 0f 1f 84 00 00 00 00 00	nopw   %cs:0x0(%rax,%rax,1)
+0x000000000054dc5a	2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dc48 <arith_driver+200>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dc4b <arith_driver+203>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dc4e <arith_driver+206>:	74 cd	je     0x54dc1d <arith_driver+157>
+   0x000000000054dc50 <arith_driver+208>:	eb 90	jmp    0x54dbe2 <arith_driver+98>
+   0x000000000054dc52 <arith_driver+210>:	66 0f 1f 44 00 00	nopw   0x0(%rax,%rax,1)
+   0x000000000054dc58 <arith_driver+216>:	31 ed	xor    %ebp,%ebp
+=> 0x000000000054dc5a <arith_driver+218>:	83 ff 01	cmp    $0x1,%edi
+   0x000000000054dc5d <arith_driver+221>:	40 0f 97 c5	seta   %bpl
+   0x000000000054dc61 <arith_driver+225>:	e9 47 ff ff ff	jmpq   0x54dbad <arith_driver+45>
+   0x000000000054dc66 <arith_driver+230>:	66 2e 0f 1f 84 00 00 00 00 00	nopw   %cs:0x0(%rax,%rax,1)
+0x000000000054dc5d	2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dc48 <arith_driver+200>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dc4b <arith_driver+203>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dc4e <arith_driver+206>:	74 cd	je     0x54dc1d <arith_driver+157>
+   0x000000000054dc50 <arith_driver+208>:	eb 90	jmp    0x54dbe2 <arith_driver+98>
+   0x000000000054dc52 <arith_driver+210>:	66 0f 1f 44 00 00	nopw   0x0(%rax,%rax,1)
+   0x000000000054dc58 <arith_driver+216>:	31 ed	xor    %ebp,%ebp
+   0x000000000054dc5a <arith_driver+218>:	83 ff 01	cmp    $0x1,%edi
+=> 0x000000000054dc5d <arith_driver+221>:	40 0f 97 c5	seta   %bpl
+   0x000000000054dc61 <arith_driver+225>:	e9 47 ff ff ff	jmpq   0x54dbad <arith_driver+45>
+   0x000000000054dc66 <arith_driver+230>:	66 2e 0f 1f 84 00 00 00 00 00	nopw   %cs:0x0(%rax,%rax,1)
+0x000000000054dc61	2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dc48 <arith_driver+200>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dc4b <arith_driver+203>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dc4e <arith_driver+206>:	74 cd	je     0x54dc1d <arith_driver+157>
+   0x000000000054dc50 <arith_driver+208>:	eb 90	jmp    0x54dbe2 <arith_driver+98>
+   0x000000000054dc52 <arith_driver+210>:	66 0f 1f 44 00 00	nopw   0x0(%rax,%rax,1)
+   0x000000000054dc58 <arith_driver+216>:	31 ed	xor    %ebp,%ebp
+   0x000000000054dc5a <arith_driver+218>:	83 ff 01	cmp    $0x1,%edi
+   0x000000000054dc5d <arith_driver+221>:	40 0f 97 c5	seta   %bpl
+=> 0x000000000054dc61 <arith_driver+225>:	e9 47 ff ff ff	jmpq   0x54dbad <arith_driver+45>
+   0x000000000054dc66 <arith_driver+230>:	66 2e 0f 1f 84 00 00 00 00 00	nopw   %cs:0x0(%rax,%rax,1)
+2810	  for (argnum = 0; argnum < nargs; argnum++)
+=> 0x000000000054dbad <arith_driver+45>:	48 85 f6	test   %rsi,%rsi
+   0x000000000054dbb0 <arith_driver+48>:	0f 8e 46 01 00 00	jle    0x54dcfc <arith_driver+380>
+   0x000000000054dbb6 <arith_driver+54>:	48 89 e9	mov    %rbp,%rcx
+   0x000000000054dbb9 <arith_driver+57>:	31 db	xor    %ebx,%ebx
+   0x000000000054dbbb <arith_driver+59>:	45 31 ff	xor    %r15d,%r15d
+   0x000000000054dbbe <arith_driver+62>:	45 31 ed	xor    %r13d,%r13d
+0x000000000054dbb0	2810	  for (argnum = 0; argnum < nargs; argnum++)
+   0x000000000054dbad <arith_driver+45>:	48 85 f6	test   %rsi,%rsi
+=> 0x000000000054dbb0 <arith_driver+48>:	0f 8e 46 01 00 00	jle    0x54dcfc <arith_driver+380>
+   0x000000000054dbb6 <arith_driver+54>:	48 89 e9	mov    %rbp,%rcx
+   0x000000000054dbb9 <arith_driver+57>:	31 db	xor    %ebx,%ebx
+   0x000000000054dbbb <arith_driver+59>:	45 31 ff	xor    %r15d,%r15d
+   0x000000000054dbbe <arith_driver+62>:	45 31 ed	xor    %r13d,%r13d
+0x000000000054dbb6	2810	  for (argnum = 0; argnum < nargs; argnum++)
+   0x000000000054dbad <arith_driver+45>:	48 85 f6	test   %rsi,%rsi
+   0x000000000054dbb0 <arith_driver+48>:	0f 8e 46 01 00 00	jle    0x54dcfc <arith_driver+380>
+=> 0x000000000054dbb6 <arith_driver+54>:	48 89 e9	mov    %rbp,%rcx
+   0x000000000054dbb9 <arith_driver+57>:	31 db	xor    %ebx,%ebx
+   0x000000000054dbbb <arith_driver+59>:	45 31 ff	xor    %r15d,%r15d
+   0x000000000054dbbe <arith_driver+62>:	45 31 ed	xor    %r13d,%r13d
+0x000000000054dbb9	2810	  for (argnum = 0; argnum < nargs; argnum++)
+   0x000000000054dbad <arith_driver+45>:	48 85 f6	test   %rsi,%rsi
+   0x000000000054dbb0 <arith_driver+48>:	0f 8e 46 01 00 00	jle    0x54dcfc <arith_driver+380>
+   0x000000000054dbb6 <arith_driver+54>:	48 89 e9	mov    %rbp,%rcx
+=> 0x000000000054dbb9 <arith_driver+57>:	31 db	xor    %ebx,%ebx
+   0x000000000054dbbb <arith_driver+59>:	45 31 ff	xor    %r15d,%r15d
+   0x000000000054dbbe <arith_driver+62>:	45 31 ed	xor    %r13d,%r13d
+0x000000000054dbbb	2810	  for (argnum = 0; argnum < nargs; argnum++)
+   0x000000000054dbad <arith_driver+45>:	48 85 f6	test   %rsi,%rsi
+   0x000000000054dbb0 <arith_driver+48>:	0f 8e 46 01 00 00	jle    0x54dcfc <arith_driver+380>
+   0x000000000054dbb6 <arith_driver+54>:	48 89 e9	mov    %rbp,%rcx
+   0x000000000054dbb9 <arith_driver+57>:	31 db	xor    %ebx,%ebx
+=> 0x000000000054dbbb <arith_driver+59>:	45 31 ff	xor    %r15d,%r15d
+   0x000000000054dbbe <arith_driver+62>:	45 31 ed	xor    %r13d,%r13d
+0x000000000054dbbe	2810	  for (argnum = 0; argnum < nargs; argnum++)
+   0x000000000054dbad <arith_driver+45>:	48 85 f6	test   %rsi,%rsi
+   0x000000000054dbb0 <arith_driver+48>:	0f 8e 46 01 00 00	jle    0x54dcfc <arith_driver+380>
+   0x000000000054dbb6 <arith_driver+54>:	48 89 e9	mov    %rbp,%rcx
+   0x000000000054dbb9 <arith_driver+57>:	31 db	xor    %ebx,%ebx
+   0x000000000054dbbb <arith_driver+59>:	45 31 ff	xor    %r15d,%r15d
+=> 0x000000000054dbbe <arith_driver+62>:	45 31 ed	xor    %r13d,%r13d
+2819	      val = args[argnum];
+=> 0x000000000054dbc1 <arith_driver+65>:	49 8b 3c de	mov    (%r14,%rbx,8),%rdi
+XTYPE (a=5001136962) at ../../emacs-26.3/src/lisp.h:2505
+2505	  return lisp_h_MARKERP (x);
+=> 0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbc7	2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+=> 0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbc9	2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+=> 0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbcc in MARKERP (x=5001136962) at ../../emacs-26.3/src/lisp.h:2505
+2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+=> 0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbcf	2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+=> 0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+INTEGERP (x=<optimized out>) at ../../emacs-26.3/src/lisp.h:2751
+2751	  return INTEGERP (x) || FLOATP (x);
+=> 0x000000000054dbd1 <arith_driver+81>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dbd4 <arith_driver+84>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dbd7 <arith_driver+87>:	74 3b	je     0x54dc14 <arith_driver+148>
+   0x000000000054dbd9 <arith_driver+89>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dbdc <arith_driver+92>:	0f 84 6e 01 00 00	je     0x54dd50 <arith_driver+464>
+0x000000000054dbd4 in NUMBERP (x=5001136962) at ../../emacs-26.3/src/lisp.h:2751
+2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dbd1 <arith_driver+81>:	83 e2 03	and    $0x3,%edx
+=> 0x000000000054dbd4 <arith_driver+84>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dbd7 <arith_driver+87>:	74 3b	je     0x54dc14 <arith_driver+148>
+   0x000000000054dbd9 <arith_driver+89>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dbdc <arith_driver+92>:	0f 84 6e 01 00 00	je     0x54dd50 <arith_driver+464>
+0x000000000054dbd7	2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dbd1 <arith_driver+81>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dbd4 <arith_driver+84>:	83 fa 02	cmp    $0x2,%edx
+=> 0x000000000054dbd7 <arith_driver+87>:	74 3b	je     0x54dc14 <arith_driver+148>
+   0x000000000054dbd9 <arith_driver+89>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dbdc <arith_driver+92>:	0f 84 6e 01 00 00	je     0x54dd50 <arith_driver+464>
+arith_driver (code=Amult, nargs=<optimized out>, args=0x7fffffffc620) at ../../emacs-26.3/src/lisp.h:2676
+2676	  return lisp_h_FLOATP (x);
+=> 0x000000000054dc14 <arith_driver+148>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dc17 <arith_driver+151>:	0f 84 33 01 00 00	je     0x54dd50 <arith_driver+464>
+0x000000000054dc17	2676	  return lisp_h_FLOATP (x);
+   0x000000000054dc14 <arith_driver+148>:	83 f8 07	cmp    $0x7,%eax
+=> 0x000000000054dc17 <arith_driver+151>:	0f 84 33 01 00 00	je     0x54dd50 <arith_driver+464>
+2825	      args[argnum] = val;
+=> 0x000000000054dc1d <arith_driver+157>:	49 89 3c de	mov    %rdi,(%r14,%rbx,8)
+XINT (a=5001136962) at ../../emacs-26.3/src/lisp.h:950
+950	  return lisp_h_XINT (a);
+=> 0x000000000054dc21 <arith_driver+161>:	48 c1 ff 02	sar    $0x2,%rdi
+arith_driver (code=Amult, nargs=<optimized out>, args=0x7fffffffc620) at ../../emacs-26.3/src/data.c:2827
+2827	      switch (code)
+=> 0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+   0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+   0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+   0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc29	2827	      switch (code)
+   0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+=> 0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+   0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+   0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc2f	2827	      switch (code)
+   0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+   0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+=> 0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+   0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc32	2827	      switch (code)
+   0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+   0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+   0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+=> 0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+=> 0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+   0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+   0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+   0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+0x000000000054dcc4	2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+   0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+=> 0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+   0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+   0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+0x000000000054dcc7	2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+   0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+   0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+=> 0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+   0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+0x000000000054dcca	2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+   0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+   0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+   0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+=> 0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+2840		  break;
+=> 0x000000000054dccd <arith_driver+333>:	eb a9	jmp    0x54dc78 <arith_driver+248>
+   0x000000000054dccf <arith_driver+335>:	90	nop
+2862		  break;
+=> 0x000000000054dc78 <arith_driver+248>:	48 83 c3 01	add    $0x1,%rbx
+   0x000000000054dc7c <arith_driver+252>:	48 39 de	cmp    %rbx,%rsi
+   0x000000000054dc7f <arith_driver+255>:	74 7b	je     0x54dcfc <arith_driver+380>
+0x000000000054dc7c	2862		  break;
+   0x000000000054dc78 <arith_driver+248>:	48 83 c3 01	add    $0x1,%rbx
+=> 0x000000000054dc7c <arith_driver+252>:	48 39 de	cmp    %rbx,%rsi
+   0x000000000054dc7f <arith_driver+255>:	74 7b	je     0x54dcfc <arith_driver+380>
+0x000000000054dc7f	2862		  break;
+   0x000000000054dc78 <arith_driver+248>:	48 83 c3 01	add    $0x1,%rbx
+   0x000000000054dc7c <arith_driver+252>:	48 39 de	cmp    %rbx,%rsi
+=> 0x000000000054dc7f <arith_driver+255>:	74 7b	je     0x54dcfc <arith_driver+380>
+2812	      if (! overflow)
+=> 0x000000000054dc81 <arith_driver+257>:	45 84 ff	test   %r15b,%r15b
+   0x000000000054dc84 <arith_driver+260>:	48 0f 44 cd	cmove  %rbp,%rcx
+   0x000000000054dc88 <arith_driver+264>:	4c 0f 44 eb	cmove  %rbx,%r13
+   0x000000000054dc8c <arith_driver+268>:	e9 30 ff ff ff	jmpq   0x54dbc1 <arith_driver+65>
+   0x000000000054dc91 <arith_driver+273>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc84	2812	      if (! overflow)
+   0x000000000054dc81 <arith_driver+257>:	45 84 ff	test   %r15b,%r15b
+=> 0x000000000054dc84 <arith_driver+260>:	48 0f 44 cd	cmove  %rbp,%rcx
+   0x000000000054dc88 <arith_driver+264>:	4c 0f 44 eb	cmove  %rbx,%r13
+   0x000000000054dc8c <arith_driver+268>:	e9 30 ff ff ff	jmpq   0x54dbc1 <arith_driver+65>
+   0x000000000054dc91 <arith_driver+273>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc88	2812	      if (! overflow)
+   0x000000000054dc81 <arith_driver+257>:	45 84 ff	test   %r15b,%r15b
+   0x000000000054dc84 <arith_driver+260>:	48 0f 44 cd	cmove  %rbp,%rcx
+=> 0x000000000054dc88 <arith_driver+264>:	4c 0f 44 eb	cmove  %rbx,%r13
+   0x000000000054dc8c <arith_driver+268>:	e9 30 ff ff ff	jmpq   0x54dbc1 <arith_driver+65>
+   0x000000000054dc91 <arith_driver+273>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc8c	2812	      if (! overflow)
+   0x000000000054dc81 <arith_driver+257>:	45 84 ff	test   %r15b,%r15b
+   0x000000000054dc84 <arith_driver+260>:	48 0f 44 cd	cmove  %rbp,%rcx
+   0x000000000054dc88 <arith_driver+264>:	4c 0f 44 eb	cmove  %rbx,%r13
+=> 0x000000000054dc8c <arith_driver+268>:	e9 30 ff ff ff	jmpq   0x54dbc1 <arith_driver+65>
+   0x000000000054dc91 <arith_driver+273>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+2819	      val = args[argnum];
+=> 0x000000000054dbc1 <arith_driver+65>:	49 8b 3c de	mov    (%r14,%rbx,8),%rdi
+XTYPE (a=-7377020154) at ../../emacs-26.3/src/lisp.h:2505
+2505	  return lisp_h_MARKERP (x);
+=> 0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbc7	2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+=> 0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbc9	2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+=> 0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbcc in MARKERP (x=-7377020154) at ../../emacs-26.3/src/lisp.h:2505
+2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+=> 0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbcf	2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+=> 0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+INTEGERP (x=<optimized out>) at ../../emacs-26.3/src/lisp.h:2751
+2751	  return INTEGERP (x) || FLOATP (x);
+=> 0x000000000054dbd1 <arith_driver+81>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dbd4 <arith_driver+84>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dbd7 <arith_driver+87>:	74 3b	je     0x54dc14 <arith_driver+148>
+   0x000000000054dbd9 <arith_driver+89>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dbdc <arith_driver+92>:	0f 84 6e 01 00 00	je     0x54dd50 <arith_driver+464>
+0x000000000054dbd4 in NUMBERP (x=-7377020154) at ../../emacs-26.3/src/lisp.h:2751
+2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dbd1 <arith_driver+81>:	83 e2 03	and    $0x3,%edx
+=> 0x000000000054dbd4 <arith_driver+84>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dbd7 <arith_driver+87>:	74 3b	je     0x54dc14 <arith_driver+148>
+   0x000000000054dbd9 <arith_driver+89>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dbdc <arith_driver+92>:	0f 84 6e 01 00 00	je     0x54dd50 <arith_driver+464>
+0x000000000054dbd7	2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dbd1 <arith_driver+81>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dbd4 <arith_driver+84>:	83 fa 02	cmp    $0x2,%edx
+=> 0x000000000054dbd7 <arith_driver+87>:	74 3b	je     0x54dc14 <arith_driver+148>
+   0x000000000054dbd9 <arith_driver+89>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dbdc <arith_driver+92>:	0f 84 6e 01 00 00	je     0x54dd50 <arith_driver+464>
+arith_driver (code=Amult, nargs=<optimized out>, args=0x7fffffffc620) at ../../emacs-26.3/src/lisp.h:2676
+2676	  return lisp_h_FLOATP (x);
+=> 0x000000000054dc14 <arith_driver+148>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dc17 <arith_driver+151>:	0f 84 33 01 00 00	je     0x54dd50 <arith_driver+464>
+0x000000000054dc17	2676	  return lisp_h_FLOATP (x);
+   0x000000000054dc14 <arith_driver+148>:	83 f8 07	cmp    $0x7,%eax
+=> 0x000000000054dc17 <arith_driver+151>:	0f 84 33 01 00 00	je     0x54dd50 <arith_driver+464>
+2825	      args[argnum] = val;
+=> 0x000000000054dc1d <arith_driver+157>:	49 89 3c de	mov    %rdi,(%r14,%rbx,8)
+XINT (a=-7377020154) at ../../emacs-26.3/src/lisp.h:950
+950	  return lisp_h_XINT (a);
+=> 0x000000000054dc21 <arith_driver+161>:	48 c1 ff 02	sar    $0x2,%rdi
+arith_driver (code=Amult, nargs=<optimized out>, args=0x7fffffffc620) at ../../emacs-26.3/src/data.c:2827
+2827	      switch (code)
+=> 0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+   0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+   0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+   0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc29	2827	      switch (code)
+   0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+=> 0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+   0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+   0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc2f	2827	      switch (code)
+   0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+   0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+=> 0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+   0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc32	2827	      switch (code)
+   0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+   0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+   0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+=> 0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+=> 0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+   0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+   0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+   0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+0x000000000054dcc4	2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+   0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+=> 0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+   0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+   0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+0x000000000054dcc7	2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+   0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+   0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+=> 0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+   0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+0x000000000054dcca	2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+   0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+   0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+   0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+=> 0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+2840		  break;
+=> 0x000000000054dccd <arith_driver+333>:	eb a9	jmp    0x54dc78 <arith_driver+248>
+   0x000000000054dccf <arith_driver+335>:	90	nop
+2862		  break;
+=> 0x000000000054dc78 <arith_driver+248>:	48 83 c3 01	add    $0x1,%rbx
+   0x000000000054dc7c <arith_driver+252>:	48 39 de	cmp    %rbx,%rsi
+   0x000000000054dc7f <arith_driver+255>:	74 7b	je     0x54dcfc <arith_driver+380>
+0x000000000054dc7c	2862		  break;
+   0x000000000054dc78 <arith_driver+248>:	48 83 c3 01	add    $0x1,%rbx
+=> 0x000000000054dc7c <arith_driver+252>:	48 39 de	cmp    %rbx,%rsi
+   0x000000000054dc7f <arith_driver+255>:	74 7b	je     0x54dcfc <arith_driver+380>
+0x000000000054dc7f	2862		  break;
+   0x000000000054dc78 <arith_driver+248>:	48 83 c3 01	add    $0x1,%rbx
+   0x000000000054dc7c <arith_driver+252>:	48 39 de	cmp    %rbx,%rsi
+=> 0x000000000054dc7f <arith_driver+255>:	74 7b	je     0x54dcfc <arith_driver+380>
+make_number (n=-2305843009802285360) at ../../emacs-26.3/src/lisp.h:944
+944	  return lisp_h_make_number (n);
+=> 0x000000000054dcfc <arith_driver+380>:	48 8d 04 ad 02 00 00 00	lea    0x2(,%rbp,4),%rax
+arith_driver (code=Amult, nargs=<optimized out>, args=0x7fffffffc620) at ../../emacs-26.3/src/data.c:2867
+2867	  return val;
+=> 0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd08	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+=> 0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd09	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+=> 0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd0a	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+=> 0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd0c	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+=> 0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd0e	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+=> 0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd10	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+=> 0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd12	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+=> 0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564b22 in eval_sub (form=<optimized out>) at ../../emacs-26.3/src/lisp.h:1862
+1862	  return XUNTAG (a, Lisp_Vectorlike);
+   0x0000000000564b1b <eval_sub+1595>:	48 89 ce	mov    %rcx,%rsi
+   0x0000000000564b1e <eval_sub+1598>:	41 ff 57 08	callq  *0x8(%r15)
+=> 0x0000000000564b22 <eval_sub+1602>:	49 89 c5	mov    %rax,%r13
+2212		  lisp_eval_depth--;
+=> 0x0000000000564b25 <eval_sub+1605>:	48 8b 05 cc 6e 60 00	mov    0x606ecc(%rip),%rax        # 0xb6b9f8 <current_thread>
+   0x0000000000564b2c <eval_sub+1612>:	48 83 a8 80 00 00 00 01	subq   $0x1,0x80(%rax)
+0x0000000000564b2c	2212		  lisp_eval_depth--;
+   0x0000000000564b25 <eval_sub+1605>:	48 8b 05 cc 6e 60 00	mov    0x606ecc(%rip),%rax        # 0xb6b9f8 <current_thread>
+=> 0x0000000000564b2c <eval_sub+1612>:	48 83 a8 80 00 00 00 01	subq   $0x1,0x80(%rax)
+backtrace_debug_on_exit (pdl=<optimized out>) at ../../emacs-26.3/src/eval.c:2214
+2214		  if (backtrace_debug_on_exit (specpdl + count))
+=> 0x0000000000564b34 <eval_sub+1620>:	48 8b 40 70	mov    0x70(%rax),%rax
+   0x0000000000564b38 <eval_sub+1624>:	42 f6 44 20 01 01	testb  $0x1,0x1(%rax,%r12,1)
+   0x0000000000564b3e <eval_sub+1630>:	75 61	jne    0x564ba1 <eval_sub+1729>
+0x0000000000564b38 in eval_sub (form=<optimized out>) at ../../emacs-26.3/src/eval.c:2214
+2214		  if (backtrace_debug_on_exit (specpdl + count))
+   0x0000000000564b34 <eval_sub+1620>:	48 8b 40 70	mov    0x70(%rax),%rax
+=> 0x0000000000564b38 <eval_sub+1624>:	42 f6 44 20 01 01	testb  $0x1,0x1(%rax,%r12,1)
+   0x0000000000564b3e <eval_sub+1630>:	75 61	jne    0x564ba1 <eval_sub+1729>
+0x0000000000564b3e	2214		  if (backtrace_debug_on_exit (specpdl + count))
+   0x0000000000564b34 <eval_sub+1620>:	48 8b 40 70	mov    0x70(%rax),%rax
+   0x0000000000564b38 <eval_sub+1624>:	42 f6 44 20 01 01	testb  $0x1,0x1(%rax,%r12,1)
+=> 0x0000000000564b3e <eval_sub+1630>:	75 61	jne    0x564ba1 <eval_sub+1729>
+2216		  SAFE_FREE ();
+=> 0x0000000000564b40 <eval_sub+1632>:	84 db	test   %bl,%bl
+   0x0000000000564b42 <eval_sub+1634>:	0f 84 a2 fe ff ff	je     0x5649ea <eval_sub+1290>
+0x0000000000564b42	2216		  SAFE_FREE ();
+   0x0000000000564b40 <eval_sub+1632>:	84 db	test   %bl,%bl
+=> 0x0000000000564b42 <eval_sub+1634>:	0f 84 a2 fe ff ff	je     0x5649ea <eval_sub+1290>
+0x00000000005649ea	855	  return make_lisp_symbol (&lispsym[index]);
+   0x00000000005649d2 <eval_sub+1266>:	4c 89 ee	mov    %r13,%rsi
+   0x00000000005649d5 <eval_sub+1269>:	bf 20 55 00 00	mov    $0x5520,%edi
+   0x00000000005649da <eval_sub+1274>:	e8 71 4b fe ff	callq  0x549550 <list2>
+   0x00000000005649df <eval_sub+1279>:	48 89 c7	mov    %rax,%rdi
+   0x00000000005649e2 <eval_sub+1282>:	e8 49 da ff ff	callq  0x562430 <call_debugger>
+   0x00000000005649e7 <eval_sub+1287>:	49 89 c5	mov    %rax,%r13
+=> 0x00000000005649ea <eval_sub+1290>:	48 8b 05 07 70 60 00	mov    0x607007(%rip),%rax        # 0xb6b9f8 <current_thread>
+   0x00000000005649f1 <eval_sub+1297>:	e9 c8 fe ff ff	jmpq   0x5648be <eval_sub+990>
+0x00000000005649f1	855	  return make_lisp_symbol (&lispsym[index]);
+   0x00000000005649d2 <eval_sub+1266>:	4c 89 ee	mov    %r13,%rsi
+   0x00000000005649d5 <eval_sub+1269>:	bf 20 55 00 00	mov    $0x5520,%edi
+   0x00000000005649da <eval_sub+1274>:	e8 71 4b fe ff	callq  0x549550 <list2>
+   0x00000000005649df <eval_sub+1279>:	48 89 c7	mov    %rax,%rdi
+   0x00000000005649e2 <eval_sub+1282>:	e8 49 da ff ff	callq  0x562430 <call_debugger>
+   0x00000000005649e7 <eval_sub+1287>:	49 89 c5	mov    %rax,%r13
+   0x00000000005649ea <eval_sub+1290>:	48 8b 05 07 70 60 00	mov    0x607007(%rip),%rax        # 0xb6b9f8 <current_thread>
+=> 0x00000000005649f1 <eval_sub+1297>:	e9 c8 fe ff ff	jmpq   0x5648be <eval_sub+990>
+2322	  specpdl_ptr--;
+=> 0x00000000005648be <eval_sub+990>:	48 83 68 78 28	subq   $0x28,0x78(%rax)
+2324	  return val;
+=> 0x00000000005648c3 <eval_sub+995>:	e9 4e fc ff ff	jmpq   0x564516 <eval_sub+54>
+0x0000000000564516	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+=> 0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000056451a	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+=> 0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000056451d	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+=> 0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000056451e	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+=> 0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564520	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+=> 0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564522	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+=> 0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564524	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+=> 0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564526	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+=> 0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564527	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+=> 0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564818 in eval_sub (form=form@entry=17140419) at ../../emacs-26.3/src/eval.c:2226
+2226		      argvals[i] = eval_sub (Fcar (args_left));
+   0x0000000000564807 <eval_sub+807>:	48 83 c3 08	add    $0x8,%rbx
+   0x000000000056480b <eval_sub+811>:	e8 30 88 fe ff	callq  0x54d040 <Fcar>
+   0x0000000000564810 <eval_sub+816>:	48 89 c7	mov    %rax,%rdi
+   0x0000000000564813 <eval_sub+819>:	e8 c8 fc ff ff	callq  0x5644e0 <eval_sub>
+=> 0x0000000000564818 <eval_sub+824>:	4c 89 ef	mov    %r13,%rdi
+   0x000000000056481b <eval_sub+827>:	48 89 43 f8	mov    %rax,-0x8(%rbx)
+0x000000000056481b	2226		      argvals[i] = eval_sub (Fcar (args_left));
+   0x0000000000564807 <eval_sub+807>:	48 83 c3 08	add    $0x8,%rbx
+   0x000000000056480b <eval_sub+811>:	e8 30 88 fe ff	callq  0x54d040 <Fcar>
+   0x0000000000564810 <eval_sub+816>:	48 89 c7	mov    %rax,%rdi
+   0x0000000000564813 <eval_sub+819>:	e8 c8 fc ff ff	callq  0x5644e0 <eval_sub>
+   0x0000000000564818 <eval_sub+824>:	4c 89 ef	mov    %r13,%rdi
+=> 0x000000000056481b <eval_sub+827>:	48 89 43 f8	mov    %rax,-0x8(%rbx)
+2227		      args_left = Fcdr (args_left);
+=> 0x000000000056481f <eval_sub+831>:	e8 4c 88 fe ff	callq  0x54d070 <Fcdr>
+   0x0000000000564824 <eval_sub+836>:	49 39 de	cmp    %rbx,%r14
+   0x0000000000564827 <eval_sub+839>:	8b b5 78 ff ff ff	mov    -0x88(%rbp),%esi
+   0x000000000056482d <eval_sub+845>:	49 89 c5	mov    %rax,%r13
+XTYPE (a=<optimized out>) at ../../emacs-26.3/src/lisp.h:1252
+1252	  if (CONSP (c))
+=> 0x000000000054d070 <Fcdr+0>:	89 fa	mov    %edi,%edx
+   0x000000000054d072 <Fcdr+2>:	48 89 f8	mov    %rdi,%rax
+   0x000000000054d075 <Fcdr+5>:	83 e2 07	and    $0x7,%edx
+   0x000000000054d078 <Fcdr+8>:	83 fa 03	cmp    $0x3,%edx
+   0x000000000054d07b <Fcdr+11>:	74 0b	je     0x54d088 <Fcdr+24>
+0x000000000054d072 in Fcdr (list=list@entry=17139859) at ../../emacs-26.3/src/lisp.h:1252
+1252	  if (CONSP (c))
+   0x000000000054d070 <Fcdr+0>:	89 fa	mov    %edi,%edx
+=> 0x000000000054d072 <Fcdr+2>:	48 89 f8	mov    %rdi,%rax
+   0x000000000054d075 <Fcdr+5>:	83 e2 07	and    $0x7,%edx
+   0x000000000054d078 <Fcdr+8>:	83 fa 03	cmp    $0x3,%edx
+   0x000000000054d07b <Fcdr+11>:	74 0b	je     0x54d088 <Fcdr+24>
+0x000000000054d075 in XTYPE (a=<optimized out>) at ../../emacs-26.3/src/lisp.h:1252
+1252	  if (CONSP (c))
+   0x000000000054d070 <Fcdr+0>:	89 fa	mov    %edi,%edx
+   0x000000000054d072 <Fcdr+2>:	48 89 f8	mov    %rdi,%rax
+=> 0x000000000054d075 <Fcdr+5>:	83 e2 07	and    $0x7,%edx
+   0x000000000054d078 <Fcdr+8>:	83 fa 03	cmp    $0x3,%edx
+   0x000000000054d07b <Fcdr+11>:	74 0b	je     0x54d088 <Fcdr+24>
+0x000000000054d078 in CDR (c=c@entry=17139859) at ../../emacs-26.3/src/lisp.h:1252
+1252	  if (CONSP (c))
+   0x000000000054d070 <Fcdr+0>:	89 fa	mov    %edi,%edx
+   0x000000000054d072 <Fcdr+2>:	48 89 f8	mov    %rdi,%rax
+   0x000000000054d075 <Fcdr+5>:	83 e2 07	and    $0x7,%edx
+=> 0x000000000054d078 <Fcdr+8>:	83 fa 03	cmp    $0x3,%edx
+   0x000000000054d07b <Fcdr+11>:	74 0b	je     0x54d088 <Fcdr+24>
+0x000000000054d07b	1252	  if (CONSP (c))
+   0x000000000054d070 <Fcdr+0>:	89 fa	mov    %edi,%edx
+   0x000000000054d072 <Fcdr+2>:	48 89 f8	mov    %rdi,%rax
+   0x000000000054d075 <Fcdr+5>:	83 e2 07	and    $0x7,%edx
+   0x000000000054d078 <Fcdr+8>:	83 fa 03	cmp    $0x3,%edx
+=> 0x000000000054d07b <Fcdr+11>:	74 0b	je     0x54d088 <Fcdr+24>
+XCDR (c=17139859) at ../../emacs-26.3/src/lisp.h:1253
+1253	    return XCDR (c);
+=> 0x000000000054d088 <Fcdr+24>:	48 8b 47 05	mov    0x5(%rdi),%rax
+   0x000000000054d08c <Fcdr+28>:	c3	retq   
+0x000000000054d08c in CDR (c=c@entry=17139859) at ../../emacs-26.3/src/lisp.h:1253
+1253	    return XCDR (c);
+   0x000000000054d088 <Fcdr+24>:	48 8b 47 05	mov    0x5(%rdi),%rax
+=> 0x000000000054d08c <Fcdr+28>:	c3	retq   
+0x0000000000564824 in eval_sub (form=form@entry=17140419) at ../../emacs-26.3/src/eval.c:2227
+2227		      args_left = Fcdr (args_left);
+   0x000000000056481f <eval_sub+831>:	e8 4c 88 fe ff	callq  0x54d070 <Fcdr>
+=> 0x0000000000564824 <eval_sub+836>:	49 39 de	cmp    %rbx,%r14
+   0x0000000000564827 <eval_sub+839>:	8b b5 78 ff ff ff	mov    -0x88(%rbp),%esi
+   0x000000000056482d <eval_sub+845>:	49 89 c5	mov    %rax,%r13
+0x0000000000564827	2227		      args_left = Fcdr (args_left);
+   0x000000000056481f <eval_sub+831>:	e8 4c 88 fe ff	callq  0x54d070 <Fcdr>
+   0x0000000000564824 <eval_sub+836>:	49 39 de	cmp    %rbx,%r14
+=> 0x0000000000564827 <eval_sub+839>:	8b b5 78 ff ff ff	mov    -0x88(%rbp),%esi
+   0x000000000056482d <eval_sub+845>:	49 89 c5	mov    %rax,%r13
+0x000000000056482d	2227		      args_left = Fcdr (args_left);
+   0x000000000056481f <eval_sub+831>:	e8 4c 88 fe ff	callq  0x54d070 <Fcdr>
+   0x0000000000564824 <eval_sub+836>:	49 39 de	cmp    %rbx,%r14
+   0x0000000000564827 <eval_sub+839>:	8b b5 78 ff ff ff	mov    -0x88(%rbp),%esi
+=> 0x000000000056482d <eval_sub+845>:	49 89 c5	mov    %rax,%r13
+2224		  for (i = 0; i < maxargs; i++)
+=> 0x0000000000564830 <eval_sub+848>:	75 cc	jne    0x5647fe <eval_sub+798>
+0x00000000005647fe	2224		  for (i = 0; i < maxargs; i++)
+   0x00000000005647df <eval_sub+767>:	48 8b 05 12 72 60 00	mov    0x607212(%rip),%rax        # 0xb6b9f8 <current_thread>
+   0x00000000005647e6 <eval_sub+774>:	66 85 f6	test   %si,%si
+   0x00000000005647e9 <eval_sub+777>:	0f 84 24 02 00 00	je     0x564a13 <eval_sub+1331>
+   0x00000000005647ef <eval_sub+783>:	48 8d 5d 90	lea    -0x70(%rbp),%rbx
+   0x00000000005647f3 <eval_sub+787>:	0f bf c6	movswl %si,%eax
+   0x00000000005647f6 <eval_sub+790>:	83 e8 01	sub    $0x1,%eax
+   0x00000000005647f9 <eval_sub+793>:	4c 8d 74 c5 98	lea    -0x68(%rbp,%rax,8),%r14
+=> 0x00000000005647fe <eval_sub+798>:	4c 89 ef	mov    %r13,%rdi
+   0x0000000000564801 <eval_sub+801>:	89 b5 78 ff ff ff	mov    %esi,-0x88(%rbp)
+0x0000000000564801	2224		  for (i = 0; i < maxargs; i++)
+   0x00000000005647df <eval_sub+767>:	48 8b 05 12 72 60 00	mov    0x607212(%rip),%rax        # 0xb6b9f8 <current_thread>
+   0x00000000005647e6 <eval_sub+774>:	66 85 f6	test   %si,%si
+   0x00000000005647e9 <eval_sub+777>:	0f 84 24 02 00 00	je     0x564a13 <eval_sub+1331>
+   0x00000000005647ef <eval_sub+783>:	48 8d 5d 90	lea    -0x70(%rbp),%rbx
+   0x00000000005647f3 <eval_sub+787>:	0f bf c6	movswl %si,%eax
+   0x00000000005647f6 <eval_sub+790>:	83 e8 01	sub    $0x1,%eax
+   0x00000000005647f9 <eval_sub+793>:	4c 8d 74 c5 98	lea    -0x68(%rbp,%rax,8),%r14
+   0x00000000005647fe <eval_sub+798>:	4c 89 ef	mov    %r13,%rdi
+=> 0x0000000000564801 <eval_sub+801>:	89 b5 78 ff ff ff	mov    %esi,-0x88(%rbp)
+2226		      argvals[i] = eval_sub (Fcar (args_left));
+=> 0x0000000000564807 <eval_sub+807>:	48 83 c3 08	add    $0x8,%rbx
+   0x000000000056480b <eval_sub+811>:	e8 30 88 fe ff	callq  0x54d040 <Fcar>
+   0x0000000000564810 <eval_sub+816>:	48 89 c7	mov    %rax,%rdi
+   0x0000000000564813 <eval_sub+819>:	e8 c8 fc ff ff	callq  0x5644e0 <eval_sub>
+   0x0000000000564818 <eval_sub+824>:	4c 89 ef	mov    %r13,%rdi
+   0x000000000056481b <eval_sub+827>:	48 89 43 f8	mov    %rax,-0x8(%rbx)
+0x000000000056480b	2226		      argvals[i] = eval_sub (Fcar (args_left));
+   0x0000000000564807 <eval_sub+807>:	48 83 c3 08	add    $0x8,%rbx
+=> 0x000000000056480b <eval_sub+811>:	e8 30 88 fe ff	callq  0x54d040 <Fcar>
+   0x0000000000564810 <eval_sub+816>:	48 89 c7	mov    %rax,%rdi
+   0x0000000000564813 <eval_sub+819>:	e8 c8 fc ff ff	callq  0x5644e0 <eval_sub>
+   0x0000000000564818 <eval_sub+824>:	4c 89 ef	mov    %r13,%rdi
+   0x000000000056481b <eval_sub+827>:	48 89 43 f8	mov    %rax,-0x8(%rbx)
+XTYPE (a=<optimized out>) at ../../emacs-26.3/src/lisp.h:1243
+1243	  if (CONSP (c))
+=> 0x000000000054d040 <Fcar+0>:	89 fa	mov    %edi,%edx
+   0x000000000054d042 <Fcar+2>:	48 89 f8	mov    %rdi,%rax
+   0x000000000054d045 <Fcar+5>:	83 e2 07	and    $0x7,%edx
+   0x000000000054d048 <Fcar+8>:	83 fa 03	cmp    $0x3,%edx
+   0x000000000054d04b <Fcar+11>:	74 0b	je     0x54d058 <Fcar+24>
+0x000000000054d042 in Fcar (list=list@entry=0) at ../../emacs-26.3/src/lisp.h:1243
+1243	  if (CONSP (c))
+   0x000000000054d040 <Fcar+0>:	89 fa	mov    %edi,%edx
+=> 0x000000000054d042 <Fcar+2>:	48 89 f8	mov    %rdi,%rax
+   0x000000000054d045 <Fcar+5>:	83 e2 07	and    $0x7,%edx
+   0x000000000054d048 <Fcar+8>:	83 fa 03	cmp    $0x3,%edx
+   0x000000000054d04b <Fcar+11>:	74 0b	je     0x54d058 <Fcar+24>
+0x000000000054d045 in XTYPE (a=<optimized out>) at ../../emacs-26.3/src/lisp.h:1243
+1243	  if (CONSP (c))
+   0x000000000054d040 <Fcar+0>:	89 fa	mov    %edi,%edx
+   0x000000000054d042 <Fcar+2>:	48 89 f8	mov    %rdi,%rax
+=> 0x000000000054d045 <Fcar+5>:	83 e2 07	and    $0x7,%edx
+   0x000000000054d048 <Fcar+8>:	83 fa 03	cmp    $0x3,%edx
+   0x000000000054d04b <Fcar+11>:	74 0b	je     0x54d058 <Fcar+24>
+0x000000000054d048 in CAR (c=c@entry=0) at ../../emacs-26.3/src/lisp.h:1243
+1243	  if (CONSP (c))
+   0x000000000054d040 <Fcar+0>:	89 fa	mov    %edi,%edx
+   0x000000000054d042 <Fcar+2>:	48 89 f8	mov    %rdi,%rax
+   0x000000000054d045 <Fcar+5>:	83 e2 07	and    $0x7,%edx
+=> 0x000000000054d048 <Fcar+8>:	83 fa 03	cmp    $0x3,%edx
+   0x000000000054d04b <Fcar+11>:	74 0b	je     0x54d058 <Fcar+24>
+0x000000000054d04b	1243	  if (CONSP (c))
+   0x000000000054d040 <Fcar+0>:	89 fa	mov    %edi,%edx
+   0x000000000054d042 <Fcar+2>:	48 89 f8	mov    %rdi,%rax
+   0x000000000054d045 <Fcar+5>:	83 e2 07	and    $0x7,%edx
+   0x000000000054d048 <Fcar+8>:	83 fa 03	cmp    $0x3,%edx
+=> 0x000000000054d04b <Fcar+11>:	74 0b	je     0x54d058 <Fcar+24>
+1245	  if (!NILP (c))
+=> 0x000000000054d04d <Fcar+13>:	48 85 ff	test   %rdi,%rdi
+   0x000000000054d050 <Fcar+16>:	75 0b	jne    0x54d05d <Fcar+29>
+   0x000000000054d052 <Fcar+18>:	c3	retq   
+   0x000000000054d053 <Fcar+19>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054d050	1245	  if (!NILP (c))
+   0x000000000054d04d <Fcar+13>:	48 85 ff	test   %rdi,%rdi
+=> 0x000000000054d050 <Fcar+16>:	75 0b	jne    0x54d05d <Fcar+29>
+   0x000000000054d052 <Fcar+18>:	c3	retq   
+   0x000000000054d053 <Fcar+19>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054d052	1245	  if (!NILP (c))
+   0x000000000054d04d <Fcar+13>:	48 85 ff	test   %rdi,%rdi
+   0x000000000054d050 <Fcar+16>:	75 0b	jne    0x54d05d <Fcar+29>
+=> 0x000000000054d052 <Fcar+18>:	c3	retq   
+   0x000000000054d053 <Fcar+19>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564810 in eval_sub (form=form@entry=17140419) at ../../emacs-26.3/src/eval.c:2226
+2226		      argvals[i] = eval_sub (Fcar (args_left));
+   0x0000000000564807 <eval_sub+807>:	48 83 c3 08	add    $0x8,%rbx
+   0x000000000056480b <eval_sub+811>:	e8 30 88 fe ff	callq  0x54d040 <Fcar>
+=> 0x0000000000564810 <eval_sub+816>:	48 89 c7	mov    %rax,%rdi
+   0x0000000000564813 <eval_sub+819>:	e8 c8 fc ff ff	callq  0x5644e0 <eval_sub>
+   0x0000000000564818 <eval_sub+824>:	4c 89 ef	mov    %r13,%rdi
+   0x000000000056481b <eval_sub+827>:	48 89 43 f8	mov    %rax,-0x8(%rbx)
+0x0000000000564813	2226		      argvals[i] = eval_sub (Fcar (args_left));
+   0x0000000000564807 <eval_sub+807>:	48 83 c3 08	add    $0x8,%rbx
+   0x000000000056480b <eval_sub+811>:	e8 30 88 fe ff	callq  0x54d040 <Fcar>
+   0x0000000000564810 <eval_sub+816>:	48 89 c7	mov    %rax,%rdi
+=> 0x0000000000564813 <eval_sub+819>:	e8 c8 fc ff ff	callq  0x5644e0 <eval_sub>
+   0x0000000000564818 <eval_sub+824>:	4c 89 ef	mov    %r13,%rdi
+   0x000000000056481b <eval_sub+827>:	48 89 43 f8	mov    %rax,-0x8(%rbx)
+eval_sub (form=0) at ../../emacs-26.3/src/lisp.h:828
+828	  return lisp_h_SYMBOLP (x);
+=> 0x00000000005644e0 <eval_sub+0>:	55	push   %rbp
+   0x00000000005644e1 <eval_sub+1>:	89 f8	mov    %edi,%eax
+   0x00000000005644e3 <eval_sub+3>:	48 89 e5	mov    %rsp,%rbp
+   0x00000000005644e6 <eval_sub+6>:	41 57	push   %r15
+   0x00000000005644e8 <eval_sub+8>:	41 56	push   %r14
+   0x00000000005644ea <eval_sub+10>:	41 55	push   %r13
+   0x00000000005644ec <eval_sub+12>:	41 54	push   %r12
+   0x00000000005644ee <eval_sub+14>:	49 89 fc	mov    %rdi,%r12
+   0x00000000005644f1 <eval_sub+17>:	53	push   %rbx
+   0x00000000005644f2 <eval_sub+18>:	48 83 ec 78	sub    $0x78,%rsp
+   0x00000000005644f6 <eval_sub+22>:	83 e0 07	and    $0x7,%eax
+   0x00000000005644f9 <eval_sub+25>:	75 35	jne    0x564530 <eval_sub+80>
+0x00000000005644e1	828	  return lisp_h_SYMBOLP (x);
+   0x00000000005644e0 <eval_sub+0>:	55	push   %rbp
+=> 0x00000000005644e1 <eval_sub+1>:	89 f8	mov    %edi,%eax
+   0x00000000005644e3 <eval_sub+3>:	48 89 e5	mov    %rsp,%rbp
+   0x00000000005644e6 <eval_sub+6>:	41 57	push   %r15
+   0x00000000005644e8 <eval_sub+8>:	41 56	push   %r14
+   0x00000000005644ea <eval_sub+10>:	41 55	push   %r13
+   0x00000000005644ec <eval_sub+12>:	41 54	push   %r12
+   0x00000000005644ee <eval_sub+14>:	49 89 fc	mov    %rdi,%r12
+   0x00000000005644f1 <eval_sub+17>:	53	push   %rbx
+   0x00000000005644f2 <eval_sub+18>:	48 83 ec 78	sub    $0x78,%rsp
+   0x00000000005644f6 <eval_sub+22>:	83 e0 07	and    $0x7,%eax
+   0x00000000005644f9 <eval_sub+25>:	75 35	jne    0x564530 <eval_sub+80>
+0x00000000005644e3	828	  return lisp_h_SYMBOLP (x);
+   0x00000000005644e0 <eval_sub+0>:	55	push   %rbp
+   0x00000000005644e1 <eval_sub+1>:	89 f8	mov    %edi,%eax
+=> 0x00000000005644e3 <eval_sub+3>:	48 89 e5	mov    %rsp,%rbp
+   0x00000000005644e6 <eval_sub+6>:	41 57	push   %r15
+   0x00000000005644e8 <eval_sub+8>:	41 56	push   %r14
+   0x00000000005644ea <eval_sub+10>:	41 55	push   %r13
+   0x00000000005644ec <eval_sub+12>:	41 54	push   %r12
+   0x00000000005644ee <eval_sub+14>:	49 89 fc	mov    %rdi,%r12
+   0x00000000005644f1 <eval_sub+17>:	53	push   %rbx
+   0x00000000005644f2 <eval_sub+18>:	48 83 ec 78	sub    $0x78,%rsp
+   0x00000000005644f6 <eval_sub+22>:	83 e0 07	and    $0x7,%eax
+   0x00000000005644f9 <eval_sub+25>:	75 35	jne    0x564530 <eval_sub+80>
+0x00000000005644e6	828	  return lisp_h_SYMBOLP (x);
+   0x00000000005644e0 <eval_sub+0>:	55	push   %rbp
+   0x00000000005644e1 <eval_sub+1>:	89 f8	mov    %edi,%eax
+   0x00000000005644e3 <eval_sub+3>:	48 89 e5	mov    %rsp,%rbp
+=> 0x00000000005644e6 <eval_sub+6>:	41 57	push   %r15
+   0x00000000005644e8 <eval_sub+8>:	41 56	push   %r14
+   0x00000000005644ea <eval_sub+10>:	41 55	push   %r13
+   0x00000000005644ec <eval_sub+12>:	41 54	push   %r12
+   0x00000000005644ee <eval_sub+14>:	49 89 fc	mov    %rdi,%r12
+   0x00000000005644f1 <eval_sub+17>:	53	push   %rbx
+   0x00000000005644f2 <eval_sub+18>:	48 83 ec 78	sub    $0x78,%rsp
+   0x00000000005644f6 <eval_sub+22>:	83 e0 07	and    $0x7,%eax
+   0x00000000005644f9 <eval_sub+25>:	75 35	jne    0x564530 <eval_sub+80>
+0x00000000005644e8	828	  return lisp_h_SYMBOLP (x);
+   0x00000000005644e0 <eval_sub+0>:	55	push   %rbp
+   0x00000000005644e1 <eval_sub+1>:	89 f8	mov    %edi,%eax
+   0x00000000005644e3 <eval_sub+3>:	48 89 e5	mov    %rsp,%rbp
+   0x00000000005644e6 <eval_sub+6>:	41 57	push   %r15
+=> 0x00000000005644e8 <eval_sub+8>:	41 56	push   %r14
+   0x00000000005644ea <eval_sub+10>:	41 55	push   %r13
+   0x00000000005644ec <eval_sub+12>:	41 54	push   %r12
+   0x00000000005644ee <eval_sub+14>:	49 89 fc	mov    %rdi,%r12
+   0x00000000005644f1 <eval_sub+17>:	53	push   %rbx
+   0x00000000005644f2 <eval_sub+18>:	48 83 ec 78	sub    $0x78,%rsp
+   0x00000000005644f6 <eval_sub+22>:	83 e0 07	and    $0x7,%eax
+   0x00000000005644f9 <eval_sub+25>:	75 35	jne    0x564530 <eval_sub+80>
+0x00000000005644ea	828	  return lisp_h_SYMBOLP (x);
+   0x00000000005644e0 <eval_sub+0>:	55	push   %rbp
+   0x00000000005644e1 <eval_sub+1>:	89 f8	mov    %edi,%eax
+   0x00000000005644e3 <eval_sub+3>:	48 89 e5	mov    %rsp,%rbp
+   0x00000000005644e6 <eval_sub+6>:	41 57	push   %r15
+   0x00000000005644e8 <eval_sub+8>:	41 56	push   %r14
+=> 0x00000000005644ea <eval_sub+10>:	41 55	push   %r13
+   0x00000000005644ec <eval_sub+12>:	41 54	push   %r12
+   0x00000000005644ee <eval_sub+14>:	49 89 fc	mov    %rdi,%r12
+   0x00000000005644f1 <eval_sub+17>:	53	push   %rbx
+   0x00000000005644f2 <eval_sub+18>:	48 83 ec 78	sub    $0x78,%rsp
+   0x00000000005644f6 <eval_sub+22>:	83 e0 07	and    $0x7,%eax
+   0x00000000005644f9 <eval_sub+25>:	75 35	jne    0x564530 <eval_sub+80>
+0x00000000005644ec	828	  return lisp_h_SYMBOLP (x);
+   0x00000000005644e0 <eval_sub+0>:	55	push   %rbp
+   0x00000000005644e1 <eval_sub+1>:	89 f8	mov    %edi,%eax
+   0x00000000005644e3 <eval_sub+3>:	48 89 e5	mov    %rsp,%rbp
+   0x00000000005644e6 <eval_sub+6>:	41 57	push   %r15
+   0x00000000005644e8 <eval_sub+8>:	41 56	push   %r14
+   0x00000000005644ea <eval_sub+10>:	41 55	push   %r13
+=> 0x00000000005644ec <eval_sub+12>:	41 54	push   %r12
+   0x00000000005644ee <eval_sub+14>:	49 89 fc	mov    %rdi,%r12
+   0x00000000005644f1 <eval_sub+17>:	53	push   %rbx
+   0x00000000005644f2 <eval_sub+18>:	48 83 ec 78	sub    $0x78,%rsp
+   0x00000000005644f6 <eval_sub+22>:	83 e0 07	and    $0x7,%eax
+   0x00000000005644f9 <eval_sub+25>:	75 35	jne    0x564530 <eval_sub+80>
+0x00000000005644ee	828	  return lisp_h_SYMBOLP (x);
+   0x00000000005644e0 <eval_sub+0>:	55	push   %rbp
+   0x00000000005644e1 <eval_sub+1>:	89 f8	mov    %edi,%eax
+   0x00000000005644e3 <eval_sub+3>:	48 89 e5	mov    %rsp,%rbp
+   0x00000000005644e6 <eval_sub+6>:	41 57	push   %r15
+   0x00000000005644e8 <eval_sub+8>:	41 56	push   %r14
+   0x00000000005644ea <eval_sub+10>:	41 55	push   %r13
+   0x00000000005644ec <eval_sub+12>:	41 54	push   %r12
+=> 0x00000000005644ee <eval_sub+14>:	49 89 fc	mov    %rdi,%r12
+   0x00000000005644f1 <eval_sub+17>:	53	push   %rbx
+   0x00000000005644f2 <eval_sub+18>:	48 83 ec 78	sub    $0x78,%rsp
+   0x00000000005644f6 <eval_sub+22>:	83 e0 07	and    $0x7,%eax
+   0x00000000005644f9 <eval_sub+25>:	75 35	jne    0x564530 <eval_sub+80>
+0x00000000005644f1	828	  return lisp_h_SYMBOLP (x);
+   0x00000000005644e0 <eval_sub+0>:	55	push   %rbp
+   0x00000000005644e1 <eval_sub+1>:	89 f8	mov    %edi,%eax
+   0x00000000005644e3 <eval_sub+3>:	48 89 e5	mov    %rsp,%rbp
+   0x00000000005644e6 <eval_sub+6>:	41 57	push   %r15
+   0x00000000005644e8 <eval_sub+8>:	41 56	push   %r14
+   0x00000000005644ea <eval_sub+10>:	41 55	push   %r13
+   0x00000000005644ec <eval_sub+12>:	41 54	push   %r12
+   0x00000000005644ee <eval_sub+14>:	49 89 fc	mov    %rdi,%r12
+=> 0x00000000005644f1 <eval_sub+17>:	53	push   %rbx
+   0x00000000005644f2 <eval_sub+18>:	48 83 ec 78	sub    $0x78,%rsp
+   0x00000000005644f6 <eval_sub+22>:	83 e0 07	and    $0x7,%eax
+   0x00000000005644f9 <eval_sub+25>:	75 35	jne    0x564530 <eval_sub+80>
+0x00000000005644f2	828	  return lisp_h_SYMBOLP (x);
+   0x00000000005644e0 <eval_sub+0>:	55	push   %rbp
+   0x00000000005644e1 <eval_sub+1>:	89 f8	mov    %edi,%eax
+   0x00000000005644e3 <eval_sub+3>:	48 89 e5	mov    %rsp,%rbp
+   0x00000000005644e6 <eval_sub+6>:	41 57	push   %r15
+   0x00000000005644e8 <eval_sub+8>:	41 56	push   %r14
+   0x00000000005644ea <eval_sub+10>:	41 55	push   %r13
+   0x00000000005644ec <eval_sub+12>:	41 54	push   %r12
+   0x00000000005644ee <eval_sub+14>:	49 89 fc	mov    %rdi,%r12
+   0x00000000005644f1 <eval_sub+17>:	53	push   %rbx
+=> 0x00000000005644f2 <eval_sub+18>:	48 83 ec 78	sub    $0x78,%rsp
+   0x00000000005644f6 <eval_sub+22>:	83 e0 07	and    $0x7,%eax
+   0x00000000005644f9 <eval_sub+25>:	75 35	jne    0x564530 <eval_sub+80>
+0x00000000005644f6	828	  return lisp_h_SYMBOLP (x);
+   0x00000000005644e0 <eval_sub+0>:	55	push   %rbp
+   0x00000000005644e1 <eval_sub+1>:	89 f8	mov    %edi,%eax
+   0x00000000005644e3 <eval_sub+3>:	48 89 e5	mov    %rsp,%rbp
+   0x00000000005644e6 <eval_sub+6>:	41 57	push   %r15
+   0x00000000005644e8 <eval_sub+8>:	41 56	push   %r14
+   0x00000000005644ea <eval_sub+10>:	41 55	push   %r13
+   0x00000000005644ec <eval_sub+12>:	41 54	push   %r12
+   0x00000000005644ee <eval_sub+14>:	49 89 fc	mov    %rdi,%r12
+   0x00000000005644f1 <eval_sub+17>:	53	push   %rbx
+   0x00000000005644f2 <eval_sub+18>:	48 83 ec 78	sub    $0x78,%rsp
+=> 0x00000000005644f6 <eval_sub+22>:	83 e0 07	and    $0x7,%eax
+   0x00000000005644f9 <eval_sub+25>:	75 35	jne    0x564530 <eval_sub+80>
+0x00000000005644f9	828	  return lisp_h_SYMBOLP (x);
+   0x00000000005644e0 <eval_sub+0>:	55	push   %rbp
+   0x00000000005644e1 <eval_sub+1>:	89 f8	mov    %edi,%eax
+   0x00000000005644e3 <eval_sub+3>:	48 89 e5	mov    %rsp,%rbp
+   0x00000000005644e6 <eval_sub+6>:	41 57	push   %r15
+   0x00000000005644e8 <eval_sub+8>:	41 56	push   %r14
+   0x00000000005644ea <eval_sub+10>:	41 55	push   %r13
+   0x00000000005644ec <eval_sub+12>:	41 54	push   %r12
+   0x00000000005644ee <eval_sub+14>:	49 89 fc	mov    %rdi,%r12
+   0x00000000005644f1 <eval_sub+17>:	53	push   %rbx
+   0x00000000005644f2 <eval_sub+18>:	48 83 ec 78	sub    $0x78,%rsp
+   0x00000000005644f6 <eval_sub+22>:	83 e0 07	and    $0x7,%eax
+=> 0x00000000005644f9 <eval_sub+25>:	75 35	jne    0x564530 <eval_sub+80>
+2131	      Lisp_Object lex_binding
+=> 0x00000000005644fb <eval_sub+27>:	48 8b 35 36 ad 67 00	mov    0x67ad36(%rip),%rsi        # 0xbdf238 <globals+1272>
+1171	  return lisp_h_NILP (x);
+=> 0x0000000000564502 <eval_sub+34>:	48 85 f6	test   %rsi,%rsi
+   0x0000000000564505 <eval_sub+37>:	0f 85 75 01 00 00	jne    0x564680 <eval_sub+416>
+0x0000000000564505	1171	  return lisp_h_NILP (x);
+   0x0000000000564502 <eval_sub+34>:	48 85 f6	test   %rsi,%rsi
+=> 0x0000000000564505 <eval_sub+37>:	0f 85 75 01 00 00	jne    0x564680 <eval_sub+416>
+2138		return Fsymbol_value (form);
+=> 0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000056450e	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+=> 0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+Fsymbol_value (symbol=symbol@entry=0) at ../../emacs-26.3/src/data.c:1274
+1274	  val = find_symbol_value (symbol);
+=> 0x0000000000550420 <Fsymbol_value+0>:	55	push   %rbp
+   0x0000000000550421 <Fsymbol_value+1>:	48 89 fd	mov    %rdi,%rbp
+   0x0000000000550424 <Fsymbol_value+4>:	e8 67 ff ff ff	callq  0x550390 <find_symbol_value>
+0x0000000000550421	1274	  val = find_symbol_value (symbol);
+   0x0000000000550420 <Fsymbol_value+0>:	55	push   %rbp
+=> 0x0000000000550421 <Fsymbol_value+1>:	48 89 fd	mov    %rdi,%rbp
+   0x0000000000550424 <Fsymbol_value+4>:	e8 67 ff ff ff	callq  0x550390 <find_symbol_value>
+0x0000000000550424	1274	  val = find_symbol_value (symbol);
+   0x0000000000550420 <Fsymbol_value+0>:	55	push   %rbp
+   0x0000000000550421 <Fsymbol_value+1>:	48 89 fd	mov    %rdi,%rbp
+=> 0x0000000000550424 <Fsymbol_value+4>:	e8 67 ff ff ff	callq  0x550390 <find_symbol_value>
+find_symbol_value (symbol=0) at ../../emacs-26.3/src/lisp.h:861
+861	  lisp_h_CHECK_SYMBOL (x);
+=> 0x0000000000550390 <find_symbol_value+0>:	53	push   %rbx
+   0x0000000000550391 <find_symbol_value+1>:	40 f6 c7 07	test   $0x7,%dil
+   0x0000000000550395 <find_symbol_value+5>:	75 7a	jne    0x550411 <find_symbol_value+129>
+0x0000000000550391 in CHECK_TYPE (x=0, predicate=49152, ok=1) at ../../emacs-26.3/src/lisp.h:861
+861	  lisp_h_CHECK_SYMBOL (x);
+   0x0000000000550390 <find_symbol_value+0>:	53	push   %rbx
+=> 0x0000000000550391 <find_symbol_value+1>:	40 f6 c7 07	test   $0x7,%dil
+   0x0000000000550395 <find_symbol_value+5>:	75 7a	jne    0x550411 <find_symbol_value+129>
+0x0000000000550395	861	  lisp_h_CHECK_SYMBOL (x);
+   0x0000000000550390 <find_symbol_value+0>:	53	push   %rbx
+   0x0000000000550391 <find_symbol_value+1>:	40 f6 c7 07	test   $0x7,%dil
+=> 0x0000000000550395 <find_symbol_value+5>:	75 7a	jne    0x550411 <find_symbol_value+129>
+XSYMBOL (a=0) at ../../emacs-26.3/src/lisp.h:835
+835	  return lisp_h_XSYMBOL (a);
+=> 0x0000000000550397 <find_symbol_value+7>:	48 81 c7 40 fe be 00	add    $0xbefe40,%rdi
+find_symbol_value (symbol=<optimized out>) at ../../emacs-26.3/src/data.c:1250
+1250	  switch (sym->u.s.redirect)
+=> 0x000000000055039e <find_symbol_value+14>:	0f b6 17	movzbl (%rdi),%edx
+   0x00000000005503a1 <find_symbol_value+17>:	d0 ea	shr    %dl
+   0x00000000005503a3 <find_symbol_value+19>:	83 e2 07	and    $0x7,%edx
+   0x00000000005503a6 <find_symbol_value+22>:	80 fa 03	cmp    $0x3,%dl
+   0x00000000005503a9 <find_symbol_value+25>:	74 1c	je     0x5503c7 <find_symbol_value+55>
+   0x00000000005503ab <find_symbol_value+27>:	77 2b	ja     0x5503d8 <find_symbol_value+72>
+   0x00000000005503ad <find_symbol_value+29>:	80 fa 01	cmp    $0x1,%dl
+   0x00000000005503b0 <find_symbol_value+32>:	75 36	jne    0x5503e8 <find_symbol_value+88>
+0x00000000005503a1	1250	  switch (sym->u.s.redirect)
+   0x000000000055039e <find_symbol_value+14>:	0f b6 17	movzbl (%rdi),%edx
+=> 0x00000000005503a1 <find_symbol_value+17>:	d0 ea	shr    %dl
+   0x00000000005503a3 <find_symbol_value+19>:	83 e2 07	and    $0x7,%edx
+   0x00000000005503a6 <find_symbol_value+22>:	80 fa 03	cmp    $0x3,%dl
+   0x00000000005503a9 <find_symbol_value+25>:	74 1c	je     0x5503c7 <find_symbol_value+55>
+   0x00000000005503ab <find_symbol_value+27>:	77 2b	ja     0x5503d8 <find_symbol_value+72>
+   0x00000000005503ad <find_symbol_value+29>:	80 fa 01	cmp    $0x1,%dl
+   0x00000000005503b0 <find_symbol_value+32>:	75 36	jne    0x5503e8 <find_symbol_value+88>
+0x00000000005503a3	1250	  switch (sym->u.s.redirect)
+   0x000000000055039e <find_symbol_value+14>:	0f b6 17	movzbl (%rdi),%edx
+   0x00000000005503a1 <find_symbol_value+17>:	d0 ea	shr    %dl
+=> 0x00000000005503a3 <find_symbol_value+19>:	83 e2 07	and    $0x7,%edx
+   0x00000000005503a6 <find_symbol_value+22>:	80 fa 03	cmp    $0x3,%dl
+   0x00000000005503a9 <find_symbol_value+25>:	74 1c	je     0x5503c7 <find_symbol_value+55>
+   0x00000000005503ab <find_symbol_value+27>:	77 2b	ja     0x5503d8 <find_symbol_value+72>
+   0x00000000005503ad <find_symbol_value+29>:	80 fa 01	cmp    $0x1,%dl
+   0x00000000005503b0 <find_symbol_value+32>:	75 36	jne    0x5503e8 <find_symbol_value+88>
+0x00000000005503a6	1250	  switch (sym->u.s.redirect)
+   0x000000000055039e <find_symbol_value+14>:	0f b6 17	movzbl (%rdi),%edx
+   0x00000000005503a1 <find_symbol_value+17>:	d0 ea	shr    %dl
+   0x00000000005503a3 <find_symbol_value+19>:	83 e2 07	and    $0x7,%edx
+=> 0x00000000005503a6 <find_symbol_value+22>:	80 fa 03	cmp    $0x3,%dl
+   0x00000000005503a9 <find_symbol_value+25>:	74 1c	je     0x5503c7 <find_symbol_value+55>
+   0x00000000005503ab <find_symbol_value+27>:	77 2b	ja     0x5503d8 <find_symbol_value+72>
+   0x00000000005503ad <find_symbol_value+29>:	80 fa 01	cmp    $0x1,%dl
+   0x00000000005503b0 <find_symbol_value+32>:	75 36	jne    0x5503e8 <find_symbol_value+88>
+0x00000000005503a9	1250	  switch (sym->u.s.redirect)
+   0x000000000055039e <find_symbol_value+14>:	0f b6 17	movzbl (%rdi),%edx
+   0x00000000005503a1 <find_symbol_value+17>:	d0 ea	shr    %dl
+   0x00000000005503a3 <find_symbol_value+19>:	83 e2 07	and    $0x7,%edx
+   0x00000000005503a6 <find_symbol_value+22>:	80 fa 03	cmp    $0x3,%dl
+=> 0x00000000005503a9 <find_symbol_value+25>:	74 1c	je     0x5503c7 <find_symbol_value+55>
+   0x00000000005503ab <find_symbol_value+27>:	77 2b	ja     0x5503d8 <find_symbol_value+72>
+   0x00000000005503ad <find_symbol_value+29>:	80 fa 01	cmp    $0x1,%dl
+   0x00000000005503b0 <find_symbol_value+32>:	75 36	jne    0x5503e8 <find_symbol_value+88>
+0x00000000005503ab	1250	  switch (sym->u.s.redirect)
+   0x000000000055039e <find_symbol_value+14>:	0f b6 17	movzbl (%rdi),%edx
+   0x00000000005503a1 <find_symbol_value+17>:	d0 ea	shr    %dl
+   0x00000000005503a3 <find_symbol_value+19>:	83 e2 07	and    $0x7,%edx
+   0x00000000005503a6 <find_symbol_value+22>:	80 fa 03	cmp    $0x3,%dl
+   0x00000000005503a9 <find_symbol_value+25>:	74 1c	je     0x5503c7 <find_symbol_value+55>
+=> 0x00000000005503ab <find_symbol_value+27>:	77 2b	ja     0x5503d8 <find_symbol_value+72>
+   0x00000000005503ad <find_symbol_value+29>:	80 fa 01	cmp    $0x1,%dl
+   0x00000000005503b0 <find_symbol_value+32>:	75 36	jne    0x5503e8 <find_symbol_value+88>
+0x00000000005503d8	1941	  return sym->u.s.val.fwd;
+   0x00000000005503c7 <find_symbol_value+55>:	48 8b 7f 10	mov    0x10(%rdi),%rdi
+   0x00000000005503cb <find_symbol_value+59>:	5b	pop    %rbx
+   0x00000000005503cc <find_symbol_value+60>:	e9 df ee ff ff	jmpq   0x54f2b0 <do_symval_forwarding>
+   0x00000000005503d1 <find_symbol_value+65>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+=> 0x00000000005503d8 <find_symbol_value+72>:	80 fa 04	cmp    $0x4,%dl
+   0x00000000005503db <find_symbol_value+75>:	75 2f	jne    0x55040c <find_symbol_value+124>
+0x00000000005503db	1941	  return sym->u.s.val.fwd;
+   0x00000000005503c7 <find_symbol_value+55>:	48 8b 7f 10	mov    0x10(%rdi),%rdi
+   0x00000000005503cb <find_symbol_value+59>:	5b	pop    %rbx
+   0x00000000005503cc <find_symbol_value+60>:	e9 df ee ff ff	jmpq   0x54f2b0 <do_symval_forwarding>
+   0x00000000005503d1 <find_symbol_value+65>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+   0x00000000005503d8 <find_symbol_value+72>:	80 fa 04	cmp    $0x4,%dl
+=> 0x00000000005503db <find_symbol_value+75>:	75 2f	jne    0x55040c <find_symbol_value+124>
+1253	    case SYMBOL_PLAINVAL: return SYMBOL_VAL (sym);
+=> 0x00000000005503dd <find_symbol_value+77>:	48 8b 47 10	mov    0x10(%rdi),%rax
+1922	  return lisp_h_SYMBOL_VAL (sym);
+=> 0x00000000005503e1 <find_symbol_value+81>:	5b	pop    %rbx
+   0x00000000005503e2 <find_symbol_value+82>:	c3	retq   
+   0x00000000005503e3 <find_symbol_value+83>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+   0x00000000005503e8 <find_symbol_value+88>:	80 fa 02	cmp    $0x2,%dl
+   0x00000000005503eb <find_symbol_value+91>:	75 1f	jne    0x55040c <find_symbol_value+124>
+0x00000000005503e2	1922	  return lisp_h_SYMBOL_VAL (sym);
+   0x00000000005503e1 <find_symbol_value+81>:	5b	pop    %rbx
+=> 0x00000000005503e2 <find_symbol_value+82>:	c3	retq   
+   0x00000000005503e3 <find_symbol_value+83>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+   0x00000000005503e8 <find_symbol_value+88>:	80 fa 02	cmp    $0x2,%dl
+   0x00000000005503eb <find_symbol_value+91>:	75 1f	jne    0x55040c <find_symbol_value+124>
+Fsymbol_value (symbol=symbol@entry=0) at ../../emacs-26.3/src/lisp.h:1046
+1046	  return lisp_h_EQ (x, y);
+=> 0x0000000000550429 <Fsymbol_value+9>:	48 3d c0 cc 00 00	cmp    $0xccc0,%rax
+   0x000000000055042f <Fsymbol_value+15>:	74 02	je     0x550433 <Fsymbol_value+19>
+   0x0000000000550431 <Fsymbol_value+17>:	5d	pop    %rbp
+   0x0000000000550432 <Fsymbol_value+18>:	c3	retq   
+0x000000000055042f	1046	  return lisp_h_EQ (x, y);
+   0x0000000000550429 <Fsymbol_value+9>:	48 3d c0 cc 00 00	cmp    $0xccc0,%rax
+=> 0x000000000055042f <Fsymbol_value+15>:	74 02	je     0x550433 <Fsymbol_value+19>
+   0x0000000000550431 <Fsymbol_value+17>:	5d	pop    %rbp
+   0x0000000000550432 <Fsymbol_value+18>:	c3	retq   
+0x0000000000550431	1046	  return lisp_h_EQ (x, y);
+   0x0000000000550429 <Fsymbol_value+9>:	48 3d c0 cc 00 00	cmp    $0xccc0,%rax
+   0x000000000055042f <Fsymbol_value+15>:	74 02	je     0x550433 <Fsymbol_value+19>
+=> 0x0000000000550431 <Fsymbol_value+17>:	5d	pop    %rbp
+   0x0000000000550432 <Fsymbol_value+18>:	c3	retq   
+0x0000000000550432	1046	  return lisp_h_EQ (x, y);
+   0x0000000000550429 <Fsymbol_value+9>:	48 3d c0 cc 00 00	cmp    $0xccc0,%rax
+   0x000000000055042f <Fsymbol_value+15>:	74 02	je     0x550433 <Fsymbol_value+19>
+   0x0000000000550431 <Fsymbol_value+17>:	5d	pop    %rbp
+=> 0x0000000000550432 <Fsymbol_value+18>:	c3	retq   
+0x0000000000564513 in eval_sub (form=0) at ../../emacs-26.3/src/eval.c:2138
+2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+=> 0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564516	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+=> 0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000056451a	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+=> 0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000056451d	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+=> 0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000056451e	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+=> 0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564520	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+=> 0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564522	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+=> 0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564524	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+=> 0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564526	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+=> 0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564527	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+=> 0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564818 in eval_sub (form=form@entry=17140419) at ../../emacs-26.3/src/eval.c:2226
+2226		      argvals[i] = eval_sub (Fcar (args_left));
+   0x0000000000564807 <eval_sub+807>:	48 83 c3 08	add    $0x8,%rbx
+   0x000000000056480b <eval_sub+811>:	e8 30 88 fe ff	callq  0x54d040 <Fcar>
+   0x0000000000564810 <eval_sub+816>:	48 89 c7	mov    %rax,%rdi
+   0x0000000000564813 <eval_sub+819>:	e8 c8 fc ff ff	callq  0x5644e0 <eval_sub>
+=> 0x0000000000564818 <eval_sub+824>:	4c 89 ef	mov    %r13,%rdi
+   0x000000000056481b <eval_sub+827>:	48 89 43 f8	mov    %rax,-0x8(%rbx)
+0x000000000056481b	2226		      argvals[i] = eval_sub (Fcar (args_left));
+   0x0000000000564807 <eval_sub+807>:	48 83 c3 08	add    $0x8,%rbx
+   0x000000000056480b <eval_sub+811>:	e8 30 88 fe ff	callq  0x54d040 <Fcar>
+   0x0000000000564810 <eval_sub+816>:	48 89 c7	mov    %rax,%rdi
+   0x0000000000564813 <eval_sub+819>:	e8 c8 fc ff ff	callq  0x5644e0 <eval_sub>
+   0x0000000000564818 <eval_sub+824>:	4c 89 ef	mov    %r13,%rdi
+=> 0x000000000056481b <eval_sub+827>:	48 89 43 f8	mov    %rax,-0x8(%rbx)
+2227		      args_left = Fcdr (args_left);
+=> 0x000000000056481f <eval_sub+831>:	e8 4c 88 fe ff	callq  0x54d070 <Fcdr>
+   0x0000000000564824 <eval_sub+836>:	49 39 de	cmp    %rbx,%r14
+   0x0000000000564827 <eval_sub+839>:	8b b5 78 ff ff ff	mov    -0x88(%rbp),%esi
+   0x000000000056482d <eval_sub+845>:	49 89 c5	mov    %rax,%r13
+XTYPE (a=<optimized out>) at ../../emacs-26.3/src/lisp.h:1252
+1252	  if (CONSP (c))
+=> 0x000000000054d070 <Fcdr+0>:	89 fa	mov    %edi,%edx
+   0x000000000054d072 <Fcdr+2>:	48 89 f8	mov    %rdi,%rax
+   0x000000000054d075 <Fcdr+5>:	83 e2 07	and    $0x7,%edx
+   0x000000000054d078 <Fcdr+8>:	83 fa 03	cmp    $0x3,%edx
+   0x000000000054d07b <Fcdr+11>:	74 0b	je     0x54d088 <Fcdr+24>
+0x000000000054d072 in Fcdr (list=list@entry=0) at ../../emacs-26.3/src/lisp.h:1252
+1252	  if (CONSP (c))
+   0x000000000054d070 <Fcdr+0>:	89 fa	mov    %edi,%edx
+=> 0x000000000054d072 <Fcdr+2>:	48 89 f8	mov    %rdi,%rax
+   0x000000000054d075 <Fcdr+5>:	83 e2 07	and    $0x7,%edx
+   0x000000000054d078 <Fcdr+8>:	83 fa 03	cmp    $0x3,%edx
+   0x000000000054d07b <Fcdr+11>:	74 0b	je     0x54d088 <Fcdr+24>
+0x000000000054d075 in XTYPE (a=<optimized out>) at ../../emacs-26.3/src/lisp.h:1252
+1252	  if (CONSP (c))
+   0x000000000054d070 <Fcdr+0>:	89 fa	mov    %edi,%edx
+   0x000000000054d072 <Fcdr+2>:	48 89 f8	mov    %rdi,%rax
+=> 0x000000000054d075 <Fcdr+5>:	83 e2 07	and    $0x7,%edx
+   0x000000000054d078 <Fcdr+8>:	83 fa 03	cmp    $0x3,%edx
+   0x000000000054d07b <Fcdr+11>:	74 0b	je     0x54d088 <Fcdr+24>
+0x000000000054d078 in CDR (c=c@entry=0) at ../../emacs-26.3/src/lisp.h:1252
+1252	  if (CONSP (c))
+   0x000000000054d070 <Fcdr+0>:	89 fa	mov    %edi,%edx
+   0x000000000054d072 <Fcdr+2>:	48 89 f8	mov    %rdi,%rax
+   0x000000000054d075 <Fcdr+5>:	83 e2 07	and    $0x7,%edx
+=> 0x000000000054d078 <Fcdr+8>:	83 fa 03	cmp    $0x3,%edx
+   0x000000000054d07b <Fcdr+11>:	74 0b	je     0x54d088 <Fcdr+24>
+0x000000000054d07b	1252	  if (CONSP (c))
+   0x000000000054d070 <Fcdr+0>:	89 fa	mov    %edi,%edx
+   0x000000000054d072 <Fcdr+2>:	48 89 f8	mov    %rdi,%rax
+   0x000000000054d075 <Fcdr+5>:	83 e2 07	and    $0x7,%edx
+   0x000000000054d078 <Fcdr+8>:	83 fa 03	cmp    $0x3,%edx
+=> 0x000000000054d07b <Fcdr+11>:	74 0b	je     0x54d088 <Fcdr+24>
+1254	  if (!NILP (c))
+=> 0x000000000054d07d <Fcdr+13>:	48 85 ff	test   %rdi,%rdi
+   0x000000000054d080 <Fcdr+16>:	75 0b	jne    0x54d08d <Fcdr+29>
+   0x000000000054d082 <Fcdr+18>:	c3	retq   
+   0x000000000054d083 <Fcdr+19>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054d080	1254	  if (!NILP (c))
+   0x000000000054d07d <Fcdr+13>:	48 85 ff	test   %rdi,%rdi
+=> 0x000000000054d080 <Fcdr+16>:	75 0b	jne    0x54d08d <Fcdr+29>
+   0x000000000054d082 <Fcdr+18>:	c3	retq   
+   0x000000000054d083 <Fcdr+19>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054d082	1254	  if (!NILP (c))
+   0x000000000054d07d <Fcdr+13>:	48 85 ff	test   %rdi,%rdi
+   0x000000000054d080 <Fcdr+16>:	75 0b	jne    0x54d08d <Fcdr+29>
+=> 0x000000000054d082 <Fcdr+18>:	c3	retq   
+   0x000000000054d083 <Fcdr+19>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564824 in eval_sub (form=form@entry=17140419) at ../../emacs-26.3/src/eval.c:2227
+2227		      args_left = Fcdr (args_left);
+   0x000000000056481f <eval_sub+831>:	e8 4c 88 fe ff	callq  0x54d070 <Fcdr>
+=> 0x0000000000564824 <eval_sub+836>:	49 39 de	cmp    %rbx,%r14
+   0x0000000000564827 <eval_sub+839>:	8b b5 78 ff ff ff	mov    -0x88(%rbp),%esi
+   0x000000000056482d <eval_sub+845>:	49 89 c5	mov    %rax,%r13
+0x0000000000564827	2227		      args_left = Fcdr (args_left);
+   0x000000000056481f <eval_sub+831>:	e8 4c 88 fe ff	callq  0x54d070 <Fcdr>
+   0x0000000000564824 <eval_sub+836>:	49 39 de	cmp    %rbx,%r14
+=> 0x0000000000564827 <eval_sub+839>:	8b b5 78 ff ff ff	mov    -0x88(%rbp),%esi
+   0x000000000056482d <eval_sub+845>:	49 89 c5	mov    %rax,%r13
+0x000000000056482d	2227		      args_left = Fcdr (args_left);
+   0x000000000056481f <eval_sub+831>:	e8 4c 88 fe ff	callq  0x54d070 <Fcdr>
+   0x0000000000564824 <eval_sub+836>:	49 39 de	cmp    %rbx,%r14
+   0x0000000000564827 <eval_sub+839>:	8b b5 78 ff ff ff	mov    -0x88(%rbp),%esi
+=> 0x000000000056482d <eval_sub+845>:	49 89 c5	mov    %rax,%r13
+2224		  for (i = 0; i < maxargs; i++)
+=> 0x0000000000564830 <eval_sub+848>:	75 cc	jne    0x5647fe <eval_sub+798>
+950	  return lisp_h_XINT (a);
+=> 0x0000000000564832 <eval_sub+850>:	48 8b 05 bf 71 60 00	mov    0x6071bf(%rip),%rax        # 0xb6b9f8 <current_thread>
+   0x0000000000564839 <eval_sub+857>:	4b 8d 1c a4	lea    (%r12,%r12,4),%rbx
+   0x000000000056483d <eval_sub+861>:	48 c1 e3 03	shl    $0x3,%rbx
+   0x0000000000564841 <eval_sub+865>:	48 8b 48 70	mov    0x70(%rax),%rcx
+   0x0000000000564845 <eval_sub+869>:	48 01 d9	add    %rbx,%rcx
+   0x0000000000564848 <eval_sub+872>:	48 89 c8	mov    %rcx,%rax
+0x0000000000564839	950	  return lisp_h_XINT (a);
+   0x0000000000564832 <eval_sub+850>:	48 8b 05 bf 71 60 00	mov    0x6071bf(%rip),%rax        # 0xb6b9f8 <current_thread>
+=> 0x0000000000564839 <eval_sub+857>:	4b 8d 1c a4	lea    (%r12,%r12,4),%rbx
+   0x000000000056483d <eval_sub+861>:	48 c1 e3 03	shl    $0x3,%rbx
+   0x0000000000564841 <eval_sub+865>:	48 8b 48 70	mov    0x70(%rax),%rcx
+   0x0000000000564845 <eval_sub+869>:	48 01 d9	add    %rbx,%rcx
+   0x0000000000564848 <eval_sub+872>:	48 89 c8	mov    %rcx,%rax
+0x000000000056483d	950	  return lisp_h_XINT (a);
+   0x0000000000564832 <eval_sub+850>:	48 8b 05 bf 71 60 00	mov    0x6071bf(%rip),%rax        # 0xb6b9f8 <current_thread>
+   0x0000000000564839 <eval_sub+857>:	4b 8d 1c a4	lea    (%r12,%r12,4),%rbx
+=> 0x000000000056483d <eval_sub+861>:	48 c1 e3 03	shl    $0x3,%rbx
+   0x0000000000564841 <eval_sub+865>:	48 8b 48 70	mov    0x70(%rax),%rcx
+   0x0000000000564845 <eval_sub+869>:	48 01 d9	add    %rbx,%rcx
+   0x0000000000564848 <eval_sub+872>:	48 89 c8	mov    %rcx,%rax
+0x0000000000564841	950	  return lisp_h_XINT (a);
+   0x0000000000564832 <eval_sub+850>:	48 8b 05 bf 71 60 00	mov    0x6071bf(%rip),%rax        # 0xb6b9f8 <current_thread>
+   0x0000000000564839 <eval_sub+857>:	4b 8d 1c a4	lea    (%r12,%r12,4),%rbx
+   0x000000000056483d <eval_sub+861>:	48 c1 e3 03	shl    $0x3,%rbx
+=> 0x0000000000564841 <eval_sub+865>:	48 8b 48 70	mov    0x70(%rax),%rcx
+   0x0000000000564845 <eval_sub+869>:	48 01 d9	add    %rbx,%rcx
+   0x0000000000564848 <eval_sub+872>:	48 89 c8	mov    %rcx,%rax
+0x0000000000564845	950	  return lisp_h_XINT (a);
+   0x0000000000564832 <eval_sub+850>:	48 8b 05 bf 71 60 00	mov    0x6071bf(%rip),%rax        # 0xb6b9f8 <current_thread>
+   0x0000000000564839 <eval_sub+857>:	4b 8d 1c a4	lea    (%r12,%r12,4),%rbx
+   0x000000000056483d <eval_sub+861>:	48 c1 e3 03	shl    $0x3,%rbx
+   0x0000000000564841 <eval_sub+865>:	48 8b 48 70	mov    0x70(%rax),%rcx
+=> 0x0000000000564845 <eval_sub+869>:	48 01 d9	add    %rbx,%rcx
+   0x0000000000564848 <eval_sub+872>:	48 89 c8	mov    %rcx,%rax
+0x0000000000564848	950	  return lisp_h_XINT (a);
+   0x0000000000564832 <eval_sub+850>:	48 8b 05 bf 71 60 00	mov    0x6071bf(%rip),%rax        # 0xb6b9f8 <current_thread>
+   0x0000000000564839 <eval_sub+857>:	4b 8d 1c a4	lea    (%r12,%r12,4),%rbx
+   0x000000000056483d <eval_sub+861>:	48 c1 e3 03	shl    $0x3,%rbx
+   0x0000000000564841 <eval_sub+865>:	48 8b 48 70	mov    0x70(%rax),%rcx
+   0x0000000000564845 <eval_sub+869>:	48 01 d9	add    %rbx,%rcx
+=> 0x0000000000564848 <eval_sub+872>:	48 89 c8	mov    %rcx,%rax
+set_backtrace_args (pdl=0x1172628, pdl=0x1172628, nargs=1, args=0x7fffffffc720) at ../../emacs-26.3/src/eval.c:190
+190	  pdl->bt.args = args;
+=> 0x000000000056484b <eval_sub+875>:	48 8d 4d 90	lea    -0x70(%rbp),%rcx
+   0x000000000056484f <eval_sub+879>:	48 89 48 10	mov    %rcx,0x10(%rax)
+0x000000000056484f	190	  pdl->bt.args = args;
+   0x000000000056484b <eval_sub+875>:	48 8d 4d 90	lea    -0x70(%rbp),%rcx
+=> 0x000000000056484f <eval_sub+879>:	48 89 48 10	mov    %rcx,0x10(%rax)
+191	  pdl->bt.nargs = nargs;
+=> 0x0000000000564853 <eval_sub+883>:	48 8b 8d 70 ff ff ff	mov    -0x90(%rbp),%rcx
+   0x000000000056485a <eval_sub+890>:	48 89 48 18	mov    %rcx,0x18(%rax)
+0x000000000056485a	191	  pdl->bt.nargs = nargs;
+   0x0000000000564853 <eval_sub+883>:	48 8b 8d 70 ff ff ff	mov    -0x90(%rbp),%rcx
+=> 0x000000000056485a <eval_sub+890>:	48 89 48 18	mov    %rcx,0x18(%rax)
+eval_sub (form=form@entry=17140419) at ../../emacs-26.3/src/eval.c:2232
+2232		  switch (i)
+=> 0x000000000056485e <eval_sub+894>:	49 8b 47 08	mov    0x8(%r15),%rax
+   0x0000000000564862 <eval_sub+898>:	66 83 fe 08	cmp    $0x8,%si
+   0x0000000000564866 <eval_sub+902>:	0f 87 cc 01 00 00	ja     0x564a38 <eval_sub+1368>
+   0x000000000056486c <eval_sub+908>:	0f b7 f6	movzwl %si,%esi
+   0x000000000056486f <eval_sub+911>:	ff 24 f5 50 fc 5f 00	jmpq   *0x5ffc50(,%rsi,8)
+0x0000000000564862	2232		  switch (i)
+   0x000000000056485e <eval_sub+894>:	49 8b 47 08	mov    0x8(%r15),%rax
+=> 0x0000000000564862 <eval_sub+898>:	66 83 fe 08	cmp    $0x8,%si
+   0x0000000000564866 <eval_sub+902>:	0f 87 cc 01 00 00	ja     0x564a38 <eval_sub+1368>
+   0x000000000056486c <eval_sub+908>:	0f b7 f6	movzwl %si,%esi
+   0x000000000056486f <eval_sub+911>:	ff 24 f5 50 fc 5f 00	jmpq   *0x5ffc50(,%rsi,8)
+0x0000000000564866	2232		  switch (i)
+   0x000000000056485e <eval_sub+894>:	49 8b 47 08	mov    0x8(%r15),%rax
+   0x0000000000564862 <eval_sub+898>:	66 83 fe 08	cmp    $0x8,%si
+=> 0x0000000000564866 <eval_sub+902>:	0f 87 cc 01 00 00	ja     0x564a38 <eval_sub+1368>
+   0x000000000056486c <eval_sub+908>:	0f b7 f6	movzwl %si,%esi
+   0x000000000056486f <eval_sub+911>:	ff 24 f5 50 fc 5f 00	jmpq   *0x5ffc50(,%rsi,8)
+0x000000000056486c	2232		  switch (i)
+   0x000000000056485e <eval_sub+894>:	49 8b 47 08	mov    0x8(%r15),%rax
+   0x0000000000564862 <eval_sub+898>:	66 83 fe 08	cmp    $0x8,%si
+   0x0000000000564866 <eval_sub+902>:	0f 87 cc 01 00 00	ja     0x564a38 <eval_sub+1368>
+=> 0x000000000056486c <eval_sub+908>:	0f b7 f6	movzwl %si,%esi
+   0x000000000056486f <eval_sub+911>:	ff 24 f5 50 fc 5f 00	jmpq   *0x5ffc50(,%rsi,8)
+0x000000000056486f	2232		  switch (i)
+   0x000000000056485e <eval_sub+894>:	49 8b 47 08	mov    0x8(%r15),%rax
+   0x0000000000564862 <eval_sub+898>:	66 83 fe 08	cmp    $0x8,%si
+   0x0000000000564866 <eval_sub+902>:	0f 87 cc 01 00 00	ja     0x564a38 <eval_sub+1368>
+   0x000000000056486c <eval_sub+908>:	0f b7 f6	movzwl %si,%esi
+=> 0x000000000056486f <eval_sub+911>:	ff 24 f5 50 fc 5f 00	jmpq   *0x5ffc50(,%rsi,8)
+1862	  return XUNTAG (a, Lisp_Vectorlike);
+=> 0x0000000000564935 <eval_sub+1109>:	48 8b 75 98	mov    -0x68(%rbp),%rsi
+   0x0000000000564939 <eval_sub+1113>:	48 8b 7d 90	mov    -0x70(%rbp),%rdi
+   0x000000000056493d <eval_sub+1117>:	ff d0	callq  *%rax
+   0x000000000056493f <eval_sub+1119>:	49 89 c5	mov    %rax,%r13
+0x0000000000564939	1862	  return XUNTAG (a, Lisp_Vectorlike);
+   0x0000000000564935 <eval_sub+1109>:	48 8b 75 98	mov    -0x68(%rbp),%rsi
+=> 0x0000000000564939 <eval_sub+1113>:	48 8b 7d 90	mov    -0x70(%rbp),%rdi
+   0x000000000056493d <eval_sub+1117>:	ff d0	callq  *%rax
+   0x000000000056493f <eval_sub+1119>:	49 89 c5	mov    %rax,%r13
+0x000000000056493d	1862	  return XUNTAG (a, Lisp_Vectorlike);
+   0x0000000000564935 <eval_sub+1109>:	48 8b 75 98	mov    -0x68(%rbp),%rsi
+   0x0000000000564939 <eval_sub+1113>:	48 8b 7d 90	mov    -0x70(%rbp),%rdi
+=> 0x000000000056493d <eval_sub+1117>:	ff d0	callq  *%rax
+   0x000000000056493f <eval_sub+1119>:	49 89 c5	mov    %rax,%r13
+0x000000000056493f	1862	  return XUNTAG (a, Lisp_Vectorlike);
+   0x0000000000564935 <eval_sub+1109>:	48 8b 75 98	mov    -0x68(%rbp),%rsi
+   0x0000000000564939 <eval_sub+1113>:	48 8b 7d 90	mov    -0x70(%rbp),%rdi
+   0x000000000056493d <eval_sub+1117>:	ff d0	callq  *%rax
+=> 0x000000000056493f <eval_sub+1119>:	49 89 c5	mov    %rax,%r13
+2242		      break;
+=> 0x0000000000564942 <eval_sub+1122>:	e9 59 ff ff ff	jmpq   0x5648a0 <eval_sub+960>
+2319	  lisp_eval_depth--;
+=> 0x00000000005648a0 <eval_sub+960>:	48 8b 05 51 71 60 00	mov    0x607151(%rip),%rax        # 0xb6b9f8 <current_thread>
+   0x00000000005648a7 <eval_sub+967>:	48 8b 50 70	mov    0x70(%rax),%rdx
+   0x00000000005648ab <eval_sub+971>:	48 83 a8 80 00 00 00 01	subq   $0x1,0x80(%rax)
+0x00000000005648a7 in backtrace_debug_on_exit (pdl=<optimized out>) at ../../emacs-26.3/src/eval.c:2319
+2319	  lisp_eval_depth--;
+   0x00000000005648a0 <eval_sub+960>:	48 8b 05 51 71 60 00	mov    0x607151(%rip),%rax        # 0xb6b9f8 <current_thread>
+=> 0x00000000005648a7 <eval_sub+967>:	48 8b 50 70	mov    0x70(%rax),%rdx
+   0x00000000005648ab <eval_sub+971>:	48 83 a8 80 00 00 00 01	subq   $0x1,0x80(%rax)
+0x00000000005648ab in eval_sub (form=form@entry=17140419) at ../../emacs-26.3/src/eval.c:2319
+2319	  lisp_eval_depth--;
+   0x00000000005648a0 <eval_sub+960>:	48 8b 05 51 71 60 00	mov    0x607151(%rip),%rax        # 0xb6b9f8 <current_thread>
+   0x00000000005648a7 <eval_sub+967>:	48 8b 50 70	mov    0x70(%rax),%rdx
+=> 0x00000000005648ab <eval_sub+971>:	48 83 a8 80 00 00 00 01	subq   $0x1,0x80(%rax)
+2320	  if (backtrace_debug_on_exit (specpdl + count))
+=> 0x00000000005648b3 <eval_sub+979>:	f6 44 1a 01 01	testb  $0x1,0x1(%rdx,%rbx,1)
+   0x00000000005648b8 <eval_sub+984>:	0f 85 14 01 00 00	jne    0x5649d2 <eval_sub+1266>
+0x00000000005648b8	2320	  if (backtrace_debug_on_exit (specpdl + count))
+   0x00000000005648b3 <eval_sub+979>:	f6 44 1a 01 01	testb  $0x1,0x1(%rdx,%rbx,1)
+=> 0x00000000005648b8 <eval_sub+984>:	0f 85 14 01 00 00	jne    0x5649d2 <eval_sub+1266>
+2322	  specpdl_ptr--;
+=> 0x00000000005648be <eval_sub+990>:	48 83 68 78 28	subq   $0x28,0x78(%rax)
+2324	  return val;
+=> 0x00000000005648c3 <eval_sub+995>:	e9 4e fc ff ff	jmpq   0x564516 <eval_sub+54>
+0x0000000000564516	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+=> 0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000056451a	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+=> 0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000056451d	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+=> 0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000056451e	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+=> 0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564520	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+=> 0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564522	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+=> 0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564524	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+=> 0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564526	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+=> 0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+   0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564527	2138		return Fsymbol_value (form);
+   0x000000000056450b <eval_sub+43>:	4c 89 e7	mov    %r12,%rdi
+   0x000000000056450e <eval_sub+46>:	e8 0d bf fe ff	callq  0x550420 <Fsymbol_value>
+   0x0000000000564513 <eval_sub+51>:	49 89 c5	mov    %rax,%r13
+   0x0000000000564516 <eval_sub+54>:	48 8d 65 d8	lea    -0x28(%rbp),%rsp
+   0x000000000056451a <eval_sub+58>:	4c 89 e8	mov    %r13,%rax
+   0x000000000056451d <eval_sub+61>:	5b	pop    %rbx
+   0x000000000056451e <eval_sub+62>:	41 5c	pop    %r12
+   0x0000000000564520 <eval_sub+64>:	41 5d	pop    %r13
+   0x0000000000564522 <eval_sub+66>:	41 5e	pop    %r14
+   0x0000000000564524 <eval_sub+68>:	41 5f	pop    %r15
+   0x0000000000564526 <eval_sub+70>:	5d	pop    %rbp
+=> 0x0000000000564527 <eval_sub+71>:	c3	retq   
+   0x0000000000564528 <eval_sub+72>:	0f 1f 84 00 00 00 00 00	nopl   0x0(%rax,%rax,1)
+0x00000000005664bc in Feval (form=17140419, lexical=<optimized out>) at ../../emacs-26.3/src/eval.c:2058
+2058	  return unbind_to (count, eval_sub (form));
+   0x00000000005664b4 <Feval+68>:	4c 89 e7	mov    %r12,%rdi
+   0x00000000005664b7 <Feval+71>:	e8 24 e0 ff ff	callq  0x5644e0 <eval_sub>
+=> 0x00000000005664bc <Feval+76>:	48 83 c4 08	add    $0x8,%rsp
+   0x00000000005664c0 <Feval+80>:	48 89 ef	mov    %rbp,%rdi
+   0x00000000005664c3 <Feval+83>:	5d	pop    %rbp
+   0x00000000005664c4 <Feval+84>:	48 89 c6	mov    %rax,%rsi
+   0x00000000005664c7 <Feval+87>:	41 5c	pop    %r12
+   0x00000000005664c9 <Feval+89>:	e9 12 be ff ff	jmpq   0x5622e0 <unbind_to>
+   0x00000000005664ce <Feval+94>:	66 90	xchg   %ax,%ax
+0x00000000005664c0	2058	  return unbind_to (count, eval_sub (form));
+   0x00000000005664b4 <Feval+68>:	4c 89 e7	mov    %r12,%rdi
+   0x00000000005664b7 <Feval+71>:	e8 24 e0 ff ff	callq  0x5644e0 <eval_sub>
+   0x00000000005664bc <Feval+76>:	48 83 c4 08	add    $0x8,%rsp
+=> 0x00000000005664c0 <Feval+80>:	48 89 ef	mov    %rbp,%rdi
+   0x00000000005664c3 <Feval+83>:	5d	pop    %rbp
+   0x00000000005664c4 <Feval+84>:	48 89 c6	mov    %rax,%rsi
+   0x00000000005664c7 <Feval+87>:	41 5c	pop    %r12
+   0x00000000005664c9 <Feval+89>:	e9 12 be ff ff	jmpq   0x5622e0 <unbind_to>
+   0x00000000005664ce <Feval+94>:	66 90	xchg   %ax,%ax
+0x00000000005664c3	2058	  return unbind_to (count, eval_sub (form));
+   0x00000000005664b4 <Feval+68>:	4c 89 e7	mov    %r12,%rdi
+   0x00000000005664b7 <Feval+71>:	e8 24 e0 ff ff	callq  0x5644e0 <eval_sub>
+   0x00000000005664bc <Feval+76>:	48 83 c4 08	add    $0x8,%rsp
+   0x00000000005664c0 <Feval+80>:	48 89 ef	mov    %rbp,%rdi
+=> 0x00000000005664c3 <Feval+83>:	5d	pop    %rbp
+   0x00000000005664c4 <Feval+84>:	48 89 c6	mov    %rax,%rsi
+   0x00000000005664c7 <Feval+87>:	41 5c	pop    %r12
+   0x00000000005664c9 <Feval+89>:	e9 12 be ff ff	jmpq   0x5622e0 <unbind_to>
+   0x00000000005664ce <Feval+94>:	66 90	xchg   %ax,%ax
+0x00000000005664c4	2058	  return unbind_to (count, eval_sub (form));
+   0x00000000005664b4 <Feval+68>:	4c 89 e7	mov    %r12,%rdi
+   0x00000000005664b7 <Feval+71>:	e8 24 e0 ff ff	callq  0x5644e0 <eval_sub>
+   0x00000000005664bc <Feval+76>:	48 83 c4 08	add    $0x8,%rsp
+   0x00000000005664c0 <Feval+80>:	48 89 ef	mov    %rbp,%rdi
+   0x00000000005664c3 <Feval+83>:	5d	pop    %rbp
+=> 0x00000000005664c4 <Feval+84>:	48 89 c6	mov    %rax,%rsi
+   0x00000000005664c7 <Feval+87>:	41 5c	pop    %r12
+   0x00000000005664c9 <Feval+89>:	e9 12 be ff ff	jmpq   0x5622e0 <unbind_to>
+   0x00000000005664ce <Feval+94>:	66 90	xchg   %ax,%ax
+0x00000000005664c7	2058	  return unbind_to (count, eval_sub (form));
+   0x00000000005664b4 <Feval+68>:	4c 89 e7	mov    %r12,%rdi
+   0x00000000005664b7 <Feval+71>:	e8 24 e0 ff ff	callq  0x5644e0 <eval_sub>
+   0x00000000005664bc <Feval+76>:	48 83 c4 08	add    $0x8,%rsp
+   0x00000000005664c0 <Feval+80>:	48 89 ef	mov    %rbp,%rdi
+   0x00000000005664c3 <Feval+83>:	5d	pop    %rbp
+   0x00000000005664c4 <Feval+84>:	48 89 c6	mov    %rax,%rsi
+=> 0x00000000005664c7 <Feval+87>:	41 5c	pop    %r12
+   0x00000000005664c9 <Feval+89>:	e9 12 be ff ff	jmpq   0x5622e0 <unbind_to>
+   0x00000000005664ce <Feval+94>:	66 90	xchg   %ax,%ax
+0x00000000005664c9	2058	  return unbind_to (count, eval_sub (form));
+   0x00000000005664b4 <Feval+68>:	4c 89 e7	mov    %r12,%rdi
+   0x00000000005664b7 <Feval+71>:	e8 24 e0 ff ff	callq  0x5644e0 <eval_sub>
+   0x00000000005664bc <Feval+76>:	48 83 c4 08	add    $0x8,%rsp
+   0x00000000005664c0 <Feval+80>:	48 89 ef	mov    %rbp,%rdi
+   0x00000000005664c3 <Feval+83>:	5d	pop    %rbp
+   0x00000000005664c4 <Feval+84>:	48 89 c6	mov    %rax,%rsi
+   0x00000000005664c7 <Feval+87>:	41 5c	pop    %r12
+=> 0x00000000005664c9 <Feval+89>:	e9 12 be ff ff	jmpq   0x5622e0 <unbind_to>
+   0x00000000005664ce <Feval+94>:	66 90	xchg   %ax,%ax

@@ -1,114 +1,242 @@
-54ddd0  48 89 f2    mov %rsi,%rdx   rdx=7fffffffc600
-54ddd3  48 89 fe    mov %rdi,%rsi   rsi=2
-54ddd6  bf 02 00 00 00  mov $0x2,%edi   edi=2
-54dddb  e9 a0 fd ff ff  jmpq 54bd80 <arith_driver>  rip=54bd80
-54bd80  41 57   push %r15   M8[7fffffffc5f0]=b630c0 rsp=7fffffffc5f0
-54db82  nums    push %r14   M8[7fffffffc5e8]=2 rsp=7fffffffc5e8
-54db84  nums    mov %rdx,%r14   r14=7fffffffc600
-54db87  nums    push %r13   M8[7fffffffc5e0]=0 rsp=7fffffffc5e0
-54db89  nums    push %r12   M8[7fffffffc5d8]=208 rsp=7fffffffc5d8
-54db8b  nums    mov %edi,%r12d  r12d=2
-54db8e  nums    push %rbp   M8[7fffffffc5d0]=7fffffffc6d0 rsp=7fffffffc5d0
-54db8f  nums    push %rbx   M8[7fffffffc5c8]=0 rsp=7fffffffc5c8
-54db90  nums    sub $0x18,$rsp  rsp=7fffffffc5b0
-54db94  nums    cmp $0x3,%edi   effect
-54db97  nums    jbe 0x54dc58 <arith_driver+216> rip=54dc58
-54dc58  nums    xor %ebp,%ebp rbp=0
-54dc5a  nums    cmp $0x1,%edi   effect
-54dc5d  nums    seta %bpl   rbp=1
-54dc61  nums    jmpq 0x54dbad<arith_driver+45>  rip=54dbad
-54dbad  nums    test %rsi,%rsi effect
-54dbb0  nums    jle 0x54dcfc <arith_driver+380> 
-54dbb6  nums    mov %rbp,%rcx   rcx=1
-54dbb9  nums    xor %ebx,%ebx   rbx=0
-54dbbb  nums    xor %r15,%r15   r15=0
-54dbbe  nums    xor %r13,%r13   r13=0
-54dbc1  nums    mov (%r14,%rbx,8),%rdi  rdi=12a174b42
-54dbc5  nums    mov %edi,%eax   rax=2a174b42
-54dbc7  nums    mov %edi,%edx   rdx=2a174b42
-54dbc9  nums    and $0x7,%eax   rax=2
-54dbcc  nums    cmp $0x1,$eax   effect
-54dbcc  nums    je 0x54dc40 <arith_driver+192>
-54dbd1  nums    and $0x3,%edx   rdx=2
-54dbd4  nums    cmp $0x2,%edx   effect
-53dbd7  nums    je 0x54dc14 <arith_driver+148>  rip=54dc14
-54dc14  nums    cmp $0x7,%eax   effect
-54dc14  nums    je 0x54dd50 <arith_driver+464>  
-54dc1d  nums    mov %rdi,(%r14,%rbx,8)  M8[7fffffffc600]=12a174b42
-54dc21  nums    sar $0x2,%rdi   rdi=4a85d2d0
-54dc25  nums    cmp $0x6,%r12d  effect
-54dc29  nums    ja 0x54dce0 <arith_driver+352>
-54dc2f  nums    mov %r12d,%eax  rax=2
-54dc32  nums    jmpq *0x5fdce0(,%rax,8) rip=0x54dcc0
-54dcc0  nums    imul %rbp,%rdi rdi =4a85d2d0
-54dcc4  nums    seto %al    rax=0
-54dcc7  nums    mov %rdi,%rbp   rbp=4a85d2d0
-54dcca  nums    or %eax,%r15d   r15=0
-54dccd  nums    0x54dc78 <arith_driver+248> rip = 54dc78
-54dc78  nums    add $0x1,%rbx   rbx=1
-54dc7c  nums    cmp %rbx,%rsi   effect
-54dc7f  nums    je 0x54dcfc <arith_driver+380>
-54dc81  nums    test %rb15,%rb15    effect
-54dc84  nums    cmove %rbp,%rcx rcx=4a85d2d0
-54dc88  nums    cmove %rbx,%r13 r13=1
-54dc8c  nums    jmpq 0x54dbc1<arith_driver+65>  rip=54dbc1
-54dbc1  nums    mov (%r14,%rbx,8),%rdi  rdi=fffffffe484b9b06
-54dbc5  nums    mov %edi,%eax   rax=484b9b06
-54dbc7  nums    mov %edi,%edx   rdx=484b9b06
-54dvc9  nums    and $0x7,%eax   rax=6
-54dbcc  nums    cmp $0x1,%eax   effect
-54dbcf  nums    je 0x54dc40 <arith_driver+192> 
-54dbd1  nums    and $0x3,%edx   rdx=2
-54dbd4  nums    cmp $0x2,%edx effect
-54dbd7  nums    je 0x54dc14 <arith_driver+148>  rip=54dc14
-54dc14  nums    cmp $0x7,%eax   effect
-54dc17  nums    je 0x54dd50 <arith_driver+464>  
-54dc1d  nums    mov %rdi,(%r14,%rbx,8)  M8[7fffffffc608]=fffffffe484b9b06
-54dc21  nums    sar $0x2,%rdi   rdi=ffffffff9212e6c1
-54dc25  nums    cmp $0x06,%r12d effect
-54dc29  nums    ja 0x54dce0 <arith_driver+352> 
-54dc2f  nums    mov %r12d,%eax  rax=2
-54dc32  nums    jmpq *0x5fdce0(,%rax,8) rip=0x54dcc0
-54dcc0  nums    imul %rbp,%rdi  rdi=dfffffffdceaced0
-54dcc4  nums    seto %al    rax=0
-54dcc7  nums    mov %rdi,%rbp   rbp=dfffffffdceaced0
-54dcca  nums    or %eax,%r15d   r15=0
-54dccd  nums    jmpq 0x54dc78 <arith_driver+248>    rip=54dc78
-54dc78  nums    add $0x1,%rbx   rbx=2
-54dc7c  nums    cmp %rbx,%rsi   effect
-54dc7f  nums    je 0x54dcfc <arith_driver+380> rip=54dcfc
-54dcfc  nums    lea 0x2(,%rbp,4),%rax   rax=7fffffff73ab3b42
-54dd04  nums    add $0x18,%rsp  rsp=7fffffffc5c8
-54dd08  nums    pop %rbx    rbx=0 rsp=7fffffffc5d0
-54dd09  nums    pop %rbp    rbp=7fffffffc6d0 rsp=7fffffffc5d8
-54dd0a  nums    pop %r12    rsp=7fffffffc5e0 r12=208
-54dd0c  nums    pop %r13    rsp=7fffffffc5e8 r13=0
-54dd0e  nums    pop %r14    rsp=7fffffffc5f0 r14=2
-54dd10  nums    pop %r15    rsp=7fffffffc5f8 r15=b630c0
-54dd12  nums    retq
-564b22  nums    mov %rax,%r13   r13=7fffffff73ab3b42
-564b25  nums    mov 0x606ecc(%rip),%rax rax=bd9500
-564b2c  nums    subq $0x1,0x80(%rax)    M8[bd9580]-=1
-564b34  nums    mov $0x70(%rax),%rax    rax=1172448
-564b38  nums    testb $0x1,0x1(%rax,%r12,1)
-564b38  nums    jne 0x564ba1<eval_sub+1729>
-564b40  nums    test %bl,%bl
-564b42  nums    je 0x5649ea <eval_sub+1290> rip=5649ea
-5649ea  nums    mov 0x607007(%rip),%rax rax=bd9500
-5649f1  nums    jmpq 0x5648be <eval_sub+990>    rip=5648be
-5648b3  nums    subq $0x28,0x78(%rax)   M8[bd9578]-=28
-5648b8  nums    jmpq 0x564516 <eval_sub+54> rip=564516
-564516  nums    lea -0x28(%rbp),%rsp    rsp =7fffffffc6a8
-56451a  nums    mov %r13,%rax   rax=7fffffff73ab3b42
-56451d  nums    pop %rbx    rbx=7fffffffc718 rsp=7fffffffc6b0
-56451e  nums    pop %r12    rsp=7fffffffc6b8 r12=c
-564520  nums    pop %r13    rsp=7fffffffc6c0 r13=1058893
-564522  nums    pop %r14    rsp=7fffffffc6c8 r14=7fffffffc720
-564524  nums    pop %r15    rsp=7fffffffc6d0 r15=b68b80
-564526  nums    pop %rbp    rbp=7fffffffc780 rsp=7fffffffc6d8
-564527  nums    retq
-564818  nums    mov %r13,%rdi   rdi=1058893
-56481b  nums    mov %rax,-0x8(%rbx) M8[7fffffffc710]=7fffffff73ab3b42
-56481f  nums    callq 0x54d070<fcdr>
-
-
+54ddd3	48 89 fe	mov %rdi,%rsi
+54ddd6	bf 02 00 00 00	mov $0x2,%edi
+54dddb	e9 a0 fd ff ff	jmpq 0x54db80 <arith_driver>
+54db80	41 57	push %r15
+54db82	41 56	push %r14
+54db84	49 89 d6	mov %rdx,%r14
+54db87	41 55	push %r13
+54db89	41 54	push %r12
+54db8b	41 89 fc	mov %edi,%r12d
+54db8e	55	push %rbp
+54db8f	53	push %rbx
+54db90	48 83 ec 18	sub $0x18,%rsp
+54db94	83 ff 03	cmp $0x3,%edi
+54db97	0f 86 bb 00 00 00	jbe 0x54dc58 <arith_driver+216>
+54dc58	31 ed	xor %ebp,%ebp
+54dc5a	83 ff 01	cmp $0x1,%edi
+54dc5d	40 0f 97 c5	seta %bpl
+54dc61	e9 47 ff ff ff	jmpq 0x54dbad <arith_driver+45>
+54dbad	48 85 f6	test %rsi,%rsi
+54dbb0	0f 8e 46 01 00 00	jle 0x54dcfc <arith_driver+380>
+54dbb6	48 89 e9	mov %rbp,%rcx
+54dbb9	31 db	xor %ebx,%ebx
+54dbbb	45 31 ff	xor %r15d,%r15d
+54dbbe	45 31 ed	xor %r13d,%r13d
+54dbc1	49 8b 3c de	mov (%r14,%rbx,8),%rdi
+54dbc5	89 f8	mov %edi,%eax
+54dbc7	89 fa	mov %edi,%edx
+54dbc9	83 e0 07	and $0x7,%eax
+54dbcc	83 f8 01	cmp $0x1,%eax
+54dbcf	74 6f	je 0x54dc40 <arith_driver+192>
+54dbd1	83 e2 03	and $0x3,%edx
+54dbd4	83 fa 02	cmp $0x2,%edx
+54dbd7	74 3b	je 0x54dc14 <arith_driver+148>
+54dc14	83 f8 07	cmp $0x7,%eax
+54dc17	0f 84 33 01 00 00	je 0x54dd50 <arith_driver+464>
+54dc1d	49 89 3c de	mov %rdi,(%r14,%rbx,8)
+54dc21	48 c1 ff 02	sar $0x2,%rdi
+54dc25	41 83 fc 06	cmp $0x6,%r12d
+54dc29	0f 87 b1 00 00 00	ja 0x54dce0 <arith_driver+352>
+54dc2f	44 89 e0	mov %r12d,%eax
+54dc32	ff 24 c5 e0 dc 5f 00	jmpq *0x5fdce0(,%rax,8)
+54dcc0	48 0f af fd	imul %rbp,%rdi
+54dcc4	0f 90 c0	seto %al
+54dcc7	48 89 fd	mov %rdi,%rbp
+54dcca	41 09 c7	or %eax,%r15d
+54dccd	eb a9	jmp 0x54dc78 <arith_driver+248>
+54dc78	48 83 c3 01	add $0x1,%rbx
+54dc7c	48 39 de	cmp %rbx,%rsi
+54dc7f	74 7b	je 0x54dcfc <arith_driver+380>
+54dc81	45 84 ff	test %r15b,%r15b
+54dc84	48 0f 44 cd	cmove %rbp,%rcx
+54dc88	4c 0f 44 eb	cmove %rbx,%r13
+54dc8c	e9 30 ff ff ff	jmpq 0x54dbc1 <arith_driver+65>
+54dbc1	49 8b 3c de	mov (%r14,%rbx,8),%rdi
+54dbc5	89 f8	mov %edi,%eax
+54dbc7	89 fa	mov %edi,%edx
+54dbc9	83 e0 07	and $0x7,%eax
+54dbcc	83 f8 01	cmp $0x1,%eax
+54dbcf	74 6f	je 0x54dc40 <arith_driver+192>
+54dbd1	83 e2 03	and $0x3,%edx
+54dbd4	83 fa 02	cmp $0x2,%edx
+54dbd7	74 3b	je 0x54dc14 <arith_driver+148>
+54dc14	83 f8 07	cmp $0x7,%eax
+54dc17	0f 84 33 01 00 00	je 0x54dd50 <arith_driver+464>
+54dc1d	49 89 3c de	mov %rdi,(%r14,%rbx,8)
+54dc21	48 c1 ff 02	sar $0x2,%rdi
+54dc25	41 83 fc 06	cmp $0x6,%r12d
+54dc29	0f 87 b1 00 00 00	ja 0x54dce0 <arith_driver+352>
+54dc2f	44 89 e0	mov %r12d,%eax
+54dc32	ff 24 c5 e0 dc 5f 00	jmpq *0x5fdce0(,%rax,8)
+54dcc0	48 0f af fd	imul %rbp,%rdi
+54dcc4	0f 90 c0	seto %al
+54dcc7	48 89 fd	mov %rdi,%rbp
+54dcca	41 09 c7	or %eax,%r15d
+54dccd	eb a9	jmp 0x54dc78 <arith_driver+248>
+54dc78	48 83 c3 01	add $0x1,%rbx
+54dc7c	48 39 de	cmp %rbx,%rsi
+54dc7f	74 7b	je 0x54dcfc <arith_driver+380>
+54dcfc	48 8d 04 ad 02 00 00 00	lea 0x2(,%rbp,4),%rax
+54dd04	48 83 c4 18	add $0x18,%rsp
+54dd08	5b	pop %rbx
+54dd09	5d	pop %rbp
+54dd0a	41 5c	pop %r12
+54dd0c	41 5d	pop %r13
+54dd0e	41 5e	pop %r14
+54dd10	41 5f	pop %r15
+54dd12	c3	retq 
+564b22	49 89 c5	mov %rax,%r13
+564b25	48 8b 05 cc 6e 60 00	mov 0x606ecc(%rip),%rax # 0xb6b9f8 <current_thread>
+564b2c	48 83 a8 80 00 00 00 01	subq $0x1,0x80(%rax)
+564b34	48 8b 40 70	mov 0x70(%rax),%rax
+564b38	42 f6 44 20 01 01	testb $0x1,0x1(%rax,%r12,1)
+564b3e	75 61	jne 0x564ba1 <eval_sub+1729>
+564b40	84 db	test %bl,%bl
+564b42	0f 84 a2 fe ff ff	je 0x5649ea <eval_sub+1290>
+5649ea	48 8b 05 07 70 60 00	mov 0x607007(%rip),%rax # 0xb6b9f8 <current_thread>
+5649f1	e9 c8 fe ff ff	jmpq 0x5648be <eval_sub+990>
+5648be	48 83 68 78 28	subq $0x28,0x78(%rax)
+5648c3	e9 4e fc ff ff	jmpq 0x564516 <eval_sub+54>
+564516	48 8d 65 d8	lea -0x28(%rbp),%rsp
+56451a	4c 89 e8	mov %r13,%rax
+56451d	5b	pop %rbx
+56451e	41 5c	pop %r12
+564520	41 5d	pop %r13
+564522	41 5e	pop %r14
+564524	41 5f	pop %r15
+564526	5d	pop %rbp
+564527	c3	retq 
+564818	4c 89 ef	mov %r13,%rdi
+56481b	48 89 43 f8	mov %rax,-0x8(%rbx)
+56481f	e8 4c 88 fe ff	callq 0x54d070 <Fcdr>
+54d070	89 fa	mov %edi,%edx
+54d072	48 89 f8	mov %rdi,%rax
+54d075	83 e2 07	and $0x7,%edx
+54d078	83 fa 03	cmp $0x3,%edx
+54d07b	74 0b	je 0x54d088 <Fcdr+24>
+54d088	48 8b 47 05	mov 0x5(%rdi),%rax
+54d08c	c3	retq 
+564824	49 39 de	cmp %rbx,%r14
+564827	8b b5 78 ff ff ff	mov -0x88(%rbp),%esi
+56482d	49 89 c5	mov %rax,%r13
+564830	75 cc	jne 0x5647fe <eval_sub+798>
+5647fe	4c 89 ef	mov %r13,%rdi
+564801	89 b5 78 ff ff ff	mov %esi,-0x88(%rbp)
+564807	48 83 c3 08	add $0x8,%rbx
+56480b	e8 30 88 fe ff	callq 0x54d040 <Fcar>
+54d040	89 fa	mov %edi,%edx
+54d042	48 89 f8	mov %rdi,%rax
+54d045	83 e2 07	and $0x7,%edx
+54d048	83 fa 03	cmp $0x3,%edx
+54d04b	74 0b	je 0x54d058 <Fcar+24>
+54d04d	48 85 ff	test %rdi,%rdi
+54d050	75 0b	jne 0x54d05d <Fcar+29>
+54d052	c3	retq 
+564810	48 89 c7	mov %rax,%rdi
+564813	e8 c8 fc ff ff	callq 0x5644e0 <eval_sub>
+5644e0	55	push %rbp
+5644e1	89 f8	mov %edi,%eax
+5644e3	48 89 e5	mov %rsp,%rbp
+5644e6	41 57	push %r15
+5644e8	41 56	push %r14
+5644ea	41 55	push %r13
+5644ec	41 54	push %r12
+5644ee	49 89 fc	mov %rdi,%r12
+5644f1	53	push %rbx
+5644f2	48 83 ec 78	sub $0x78,%rsp
+5644f6	83 e0 07	and $0x7,%eax
+5644f9	75 35	jne 0x564530 <eval_sub+80>
+5644fb	48 8b 35 36 ad 67 00	mov 0x67ad36(%rip),%rsi # 0xbdf238 <globals+1272>
+564502	48 85 f6	test %rsi,%rsi
+564505	0f 85 75 01 00 00	jne 0x564680 <eval_sub+416>
+56450b	4c 89 e7	mov %r12,%rdi
+56450e	e8 0d bf fe ff	callq 0x550420 <Fsymbol_value>
+550420	55	push %rbp
+550421	48 89 fd	mov %rdi,%rbp
+550424	e8 67 ff ff ff	callq 0x550390 <find_symbol_value>
+550390	53	push %rbx
+550391	40 f6 c7 07	test $0x7,%dil
+550395	75 7a	jne 0x550411 <find_symbol_value+129>
+550397	48 81 c7 40 fe be 00	add $0xbefe40,%rdi
+55039e	0f b6 17	movzbl (%rdi),%edx
+5503a1	d0 ea	shr %dl
+5503a3	83 e2 07	and $0x7,%edx
+5503a6	80 fa 03	cmp $0x3,%dl
+5503a9	74 1c	je 0x5503c7 <find_symbol_value+55>
+5503ab	77 2b	ja 0x5503d8 <find_symbol_value+72>
+5503d8	80 fa 04	cmp $0x4,%dl
+5503db	75 2f	jne 0x55040c <find_symbol_value+124>
+5503dd	48 8b 47 10	mov 0x10(%rdi),%rax
+5503e1	5b	pop %rbx
+5503e2	c3	retq 
+550429	48 3d c0 cc 00 00	cmp $0xccc0,%rax
+55042f	74 02	je 0x550433 <Fsymbol_value+19>
+550431	5d	pop %rbp
+550432	c3	retq 
+564513	49 89 c5	mov %rax,%r13
+564516	48 8d 65 d8	lea -0x28(%rbp),%rsp
+56451a	4c 89 e8	mov %r13,%rax
+56451d	5b	pop %rbx
+56451e	41 5c	pop %r12
+564520	41 5d	pop %r13
+564522	41 5e	pop %r14
+564524	41 5f	pop %r15
+564526	5d	pop %rbp
+564527	c3	retq 
+564818	4c 89 ef	mov %r13,%rdi
+56481b	48 89 43 f8	mov %rax,-0x8(%rbx)
+56481f	e8 4c 88 fe ff	callq 0x54d070 <Fcdr>
+54d070	89 fa	mov %edi,%edx
+54d072	48 89 f8	mov %rdi,%rax
+54d075	83 e2 07	and $0x7,%edx
+54d078	83 fa 03	cmp $0x3,%edx
+54d07b	74 0b	je 0x54d088 <Fcdr+24>
+54d07d	48 85 ff	test %rdi,%rdi
+54d080	75 0b	jne 0x54d08d <Fcdr+29>
+54d082	c3	retq 
+564824	49 39 de	cmp %rbx,%r14
+564827	8b b5 78 ff ff ff	mov -0x88(%rbp),%esi
+56482d	49 89 c5	mov %rax,%r13
+564830	75 cc	jne 0x5647fe <eval_sub+798>
+564832	48 8b 05 bf 71 60 00	mov 0x6071bf(%rip),%rax # 0xb6b9f8 <current_thread>
+564839	4b 8d 1c a4	lea (%r12,%r12,4),%rbx
+56483d	48 c1 e3 03	shl $0x3,%rbx
+564841	48 8b 48 70	mov 0x70(%rax),%rcx
+564845	48 01 d9	add %rbx,%rcx
+564848	48 89 c8	mov %rcx,%rax
+56484b	48 8d 4d 90	lea -0x70(%rbp),%rcx
+56484f	48 89 48 10	mov %rcx,0x10(%rax)
+564853	48 8b 8d 70 ff ff ff	mov -0x90(%rbp),%rcx
+56485a	48 89 48 18	mov %rcx,0x18(%rax)
+56485e	49 8b 47 08	mov 0x8(%r15),%rax
+564862	66 83 fe 08	cmp $0x8,%si
+564866	0f 87 cc 01 00 00	ja 0x564a38 <eval_sub+1368>
+56486c	0f b7 f6	movzwl %si,%esi
+56486f	ff 24 f5 50 fc 5f 00	jmpq *0x5ffc50(,%rsi,8)
+564935	48 8b 75 98	mov -0x68(%rbp),%rsi
+564939	48 8b 7d 90	mov -0x70(%rbp),%rdi
+56493d	ff d0	callq *%rax
+56493f	49 89 c5	mov %rax,%r13
+564942	e9 59 ff ff ff	jmpq 0x5648a0 <eval_sub+960>
+5648a0	48 8b 05 51 71 60 00	mov 0x607151(%rip),%rax # 0xb6b9f8 <current_thread>
+5648a7	48 8b 50 70	mov 0x70(%rax),%rdx
+5648ab	48 83 a8 80 00 00 00 01	subq $0x1,0x80(%rax)
+5648b3	f6 44 1a 01 01	testb $0x1,0x1(%rdx,%rbx,1)
+5648b8	0f 85 14 01 00 00	jne 0x5649d2 <eval_sub+1266>
+5648be	48 83 68 78 28	subq $0x28,0x78(%rax)
+5648c3	e9 4e fc ff ff	jmpq 0x564516 <eval_sub+54>
+564516	48 8d 65 d8	lea -0x28(%rbp),%rsp
+56451a	4c 89 e8	mov %r13,%rax
+56451d	5b	pop %rbx
+56451e	41 5c	pop %r12
+564520	41 5d	pop %r13
+564522	41 5e	pop %r14
+564524	41 5f	pop %r15
+564526	5d	pop %rbp
+564527	c3	retq 
+5664bc	48 83 c4 08	add $0x8,%rsp
+5664c0	48 89 ef	mov %rbp,%rdi
+5664c3	5d	pop %rbp
+5664c4	48 89 c6	mov %rax,%rsi
+5664c7	41 5c	pop %r12
+5664c9	e9 12 be ff ff	jmpq 0x5622e0 <unbind_to>
