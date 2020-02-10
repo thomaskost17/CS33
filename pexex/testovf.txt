@@ -1,0 +1,71 @@
+1) compiling with -O2:
+
+    testovf:
+    .LFB0:
+            .cfi_startproc
+            xorl    %eax, %eax
+            ret
+    The resulting assembly code for this compilation is shown above. In this case the compiler is trying to optimize 
+    the code without knowing that overflow can occur. The only functional instruction sets %eax to zero and returns 0. 
+    This is done because the compiler in trying to optimize the code and adding a positive value to a number will always 
+    increase it (discounting for overflow). So as a result, the compiler thinks that this condition should always be false
+    and returns 0.
+ 
+2) compiling with -O2 -fwrapv
+
+    testovf:
+    .LFB0:
+            .cfi_startproc
+            movabsq $9223372036854775807, %rax //rax=9223372036854775807
+            addq    %rdi, %rax                 //rax += rdi
+            cmpq    %rdi, %rax                 //rdi-rax
+            setl    %al                        //al== 1 if less than 0
+            ret
+            .cfi_endproc
+    This compilation results in different assembly code as the compiler now considers integer overflow. As overflow
+    is now defined to wrap around, it is possible that adding a positive value to an integer could produce a smaller
+    value. As a result the compiler acutally does a comparison between the original value and the value that has 
+    had a constant added to it. The code adds the values, then does a comparison between the orignal and new values.
+    Because of the tag, the compiler actually executes more instructions to be wary of overflow.
+    
+3) compiling with -O2 -fsanitize=undefined
+
+    testovf:
+    .LFB0:
+        .cfi_startproc
+        pushq	%rbp
+        .cfi_def_cfa_offset 16
+        .cfi_offset 6, -16
+        pushq	%rbx
+        .cfi_def_cfa_offset 24
+        .cfi_offset 3, -24
+        movabsq	$9223372036854775807, %rdx
+        movq	%rdi, %rbp
+        movq	%rdi, %rbx
+        subq	$8, %rsp
+        .cfi_def_cfa_offset 32
+        addq	%rdx, %rbp
+        jo	.L6
+    .L2:
+        cmpq	%rbx, %rbp
+        setl	%al
+        addq	$8, %rsp
+        .cfi_remember_state
+        .cfi_def_cfa_offset 24
+        popq	%rbx
+        .cfi_def_cfa_offset 16
+        popq	%rbp
+        .cfi_def_cfa_offset 8
+        ret
+    .L6:
+        .cfi_restore_state
+        movq	%rdi, %rsi
+        leaq	.Lubsan_data0(%rip), %rdi
+        call	__ubsan_handle_add_overflow@PLT
+        jmp	.L2
+    This compilation produces a much more complicated result. This compilation is created with the intention of preserving the state of
+    the machine. The tag ensures that we watch for undefined behavior and will end the program and restore the status
+    of the machine. The program starts by freeing the rbp and rbx registers by pushing them to the stack. after that it 
+    loads the arguments and adds the constant to the value. when the addition is done, if overflow occurs the program 
+    jumps to a subroutine to handle overlfow. After this finishes executing the initial state of the machine is restored--meaning
+    that the values pushed to the stack are popped so their registers contain their previously held values. 

@@ -1,0 +1,42 @@
+1: We can notice that emacs does not output the correct mathematical value for the integers it was given. 
+    The result that is output is 2305843008625102544, while the correct mathemaical result would be -2305843009802285360.
+    This value appears as the result of our imulq instruction in line 70 of our trace. This means that our value could be 
+    calculated properly by emacs. Therefore, there must be some instruction after the calculation of our answer that changes
+    the value held at our register. Given that the emacs editor has predefined values for most positive and negative values that
+    it can deal with, it is likely that the resulting change is due to another function like eval_sub attempting to deal with a
+    value that is outside of it's predefined range.
+2:  the following code in the data.c file in the emacs source code explains how the integer value returned is brought about:
+
+        DEFVAR_LISP ("most-positive-fixnum", Vmost_positive_fixnum,
+                doc: /* The largest value that is representable in a Lisp integer.
+    This variable cannot be set; trying to do so will signal an error.  */);
+    Vmost_positive_fixnum = make_number (MOST_POSITIVE_FIXNUM);
+    make_symbol_constant (intern_c_string ("most-positive-fixnum"));
+    
+    DEFVAR_LISP ("most-negative-fixnum", Vmost_negative_fixnum,
+                doc: /* The smallest value that is representable in a Lisp integer.
+    This variable cannot be set; trying to do so will signal an error.  */);
+    Vmost_negative_fixnum = make_number (MOST_NEGATIVE_FIXNUM);
+    make_symbol_constant (intern_c_string ("most-negative-fixnum"));
+
+    The code defines the string input most-negative-fixnum to be a constant value. Asking for this string to be evaluated will 
+    simply evaluate the constant assigned to the string. This means that the constant is likely defined somewhere in the 
+    emacs source code such that the value MOST_NEGATIVE_FIXNUM contains -2305843009213693952.
+
+3: The shell command emacs -Q -batch -eval '(print (* most-positive-fixnum most-positive-fixnum most-positive-fixnum most-positive-fixnum))'
+only outputs 1. This is likely due to the fact that we are attempting to multiply such large numbers. This multiplication will result in integer 
+overflow--which would give us undefined values. However, the assembly language from our emacs distribution suggests that there are 
+safeguards in place watching for integer overflow. We can specifically look to the following assembly language instructions:
+    54dcc0	48 0f af fd	imul %rbp,%rdi  
+    54dcc4	0f 90 c0	seto %al    
+this code performs the multiplication function that would be associated with the command we gave. We can note that each
+multiplicaiton operation is followed by a set instruction watching for overflow. This suggests that when the operation causes
+overflow it is possibly that the program simply returns %rax at the time. Becuase %rax will be set to 1 in the presence of 
+overflow, it is likely that this is why the function returns 1. This is helpful behaviour as it allows users to clearly know 
+that their operation was not performed correctly as it was not a random value but a clearly wrong one.
+
+4: There would likely be some changes with compiling with -fwrapv, but for the most part emacs should be fine to do so. 
+This is beacause the existing assembly code features some error checking for overflow. Making overflow a defined process
+should not impact the results of this process. We know that emacs is already wary of overflow as it has functions like 
+seto to check if overflow occured. The use of flags to determine if overflow occured would not be affected by it being a 
+defined process. So it should be fine to compile using the -fwrapv tag.

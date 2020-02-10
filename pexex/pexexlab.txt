@@ -1,0 +1,32 @@
+Main commands used:
+gdb ~eggert/bin64/bin/emacs-26.3
+b Ftimes
+r -Q -batch -eval '(print (* 1250284240 -1844255039))'
+layout regs 
+si/ni
+x/1xg $rax+128 //values changed throughout
+
+process throughout lab:
+first started making trace by hand, ran into difficulties given the time it takes to generate so many lines. Also at the 
+time did not know that ni would not step into functions. Took a few tries through the debugging process to figure out 
+that a seperate instruction was needed to enter function calls. Was also initially using  "gcc -S ~eggert/bin64/bin/emacs-26.3" to find the values of the second column. 
+Followed TA's guidlines using scripting to generate the first three columns of the trace file. Then stepped throughout
+the Ftimes function and found values that each register held. Used this to find the text for the fourth column.
+
+While stepping through the code, i used x/1xg $register+ constant to confirm that memory on the stack was what it should be. 
+Ensuring that i had the correct location of each address as it was pushed onto the stack. 
+
+
+also followed suggestion for use of the "uniq gdb-formatted.txt | sed 's/  */ /g' > trace.tr" command to remove the duplicate lines.
+NOTE: first machine instruction was not included using these commands, added this manually
+
+notes:
+looks like based upon the tags the code is cycling through several different possible modes until it lands on 
+the correct point where it pulls in our provided integers and multiplies them.
+
+it appears that the value of the multiplication is right inside of the registers, but
+it returns the incorrect value. The initial value is overwritten later after the first  return.
+
+unsure as to wether or not the trace needs to continue past the first return, but will annotate either way.
+
+cntrl + l will fix graphical errors, helpful as the gdb ui is a little prone to leaving text on the screen
