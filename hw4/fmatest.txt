@@ -1,12 +1,46 @@
 Explaination of assembly for each function:
 	f1 assembly:
-
-	Explaination:
-	
-	f2 assembly:
-	
+======================================================
+f1:
+.LFB3:
+        .cfi_startproc
+        vfmadd132ss     %xmm1, %xmm2, %xmm0
+        ret
+======================================================
 	Explanation:
+	This is a single machine commmand that does the operation (a*b) +c. This command multiplies %xmm1 and %xmm2 and adds the result to %xmm0. The benefit of this
+	command is that it calculates the value as if there was infinite precision, and only rounds at the end. This means that there are fewer rounding errors introduced
+	into the calculation--thus yeilding a more accurate result. In this case the compiler generated this machine code because the fmaf function from the math
+	library was used. This fucntion is builtin and set up so that the fused multiply add instruction can be implemented. That is, that the function is defined such
+	that a specific hardware instruction can be executed. In short, using the function tells GCC that a simpler assembly instruction can be used to make the 
+	code more efficent.
+	
+
+	f2 assembly:
+======================================================
+f2:
+.LFB4:
+        .cfi_startproc
+        vmulss  %xmm1, %xmm0, %xmm0
+        vaddss  %xmm2, %xmm0, %xmm0
+        ret
+======================================================
+	Explanation:
+	These machine instructions carry out the operations on floating point values as shown in the code. The code seperately calculates the values of a*b (the result of 
+	which is rounded) and adds c to that value. This final value is then again rounded. Note that in this case, %xmm0 initially contains a, %xmm1 contains b, and %
+	%xmm2 contains c. We should also notice that this result causes two rounding errors to take place--giving us a less accurate result. The compiler created this 
+	machine code as it was simply following the floating point operations in the return statement. So machine code directly reflecting the arithmatic is generated. 
 	
 Values for which fmatest returns true:
-
+	a =2^23 +1
+	b = 2.5
+	c = 0.75
+	Explanation:
+	the mantisa of a can be written as 0...01, as the exponent would be 150 (giving us a final value of 23). When this is multiplied by 2.5 the exponent will be
+	incremented by 1 and the lowest representable value is now 2. In the case of f1, rounding will not yet be done, so we will actaully have a value of 0.5 left beyond
+	the end of the lowest bit. When 0.75 is added to this 1.25 will round up to 2, as this is the nearest even. this will increment the mantisa giving a final bit
+	pattern of 0...0010. However, if the value is incremented after the first multiplication, the value is immediately rounded (it is not caluclated as if there is
+	infinite precision). This means that the value in %xmm0 at the beginning of the add instruction has the mantisa 0...01. When 0.75 is added to this, it will round 
+	down to the nearest even , which is the original value of 0...001 (with an exponent of 151). As we can see, the rounding error introduced will cause our final
+	answer to differ by 2 depending on wether or not the f1 or f2 instruction was used.
 

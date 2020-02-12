@@ -4,7 +4,7 @@ static float u2f(unsigned u)
 	{
 		float f;
 		unsigned un;
-	} x;
+	} x;//the same bit pattern will go here but can be interpreted as either type
 	x.un = u;
 
 	return x.f;
