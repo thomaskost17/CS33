@@ -1,0 +1,12 @@
+Explaination of assembly for each function:
+	f1 assembly:
+
+	Explaination:
+	
+	f2 assembly:
+	
+	Explanation:
+	
+Values for which fmatest returns true:
+
+
