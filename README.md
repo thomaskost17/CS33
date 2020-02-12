@@ -3,8 +3,11 @@
 ##Summary
 
 hw1-4 --> practice problems (often concerning assembly)
+
 Datalab --> bitwise operations
+
 Pexex Lab --> Assembly and GDB
+
 Smashing Lab --> TBD
 
 ##Notes
