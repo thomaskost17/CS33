@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 static float u2f(unsigned u)
 {
 	union floatAndUnsinged
@@ -15,7 +17,7 @@ float fpwr2(int x)
 	// get result for exponent and fraction
 	// note that we only need to set one bit in the frac as this is always going to be a power of 2
 	unsigned exp, frac;
-	unsigned u;
+	unsigned u=0;
 	int EXP_MIN = -126;
 	if(x <EXP_MIN-23)  //WE CAN GO TO 2^-149 because of the fact that frac can have leading zeros
 	{
@@ -29,10 +31,10 @@ float fpwr2(int x)
 		exp =0;
 		frac =(1<<(22-(x+127)));//put a 1 x+127 bits from 
 
-	}else if(x < 255)
+	}else if(x < 128)
 	{
 		//normalized result
-		exp = x-127;
+		exp = x+127;
 		frac = 0;//need nothing here as leading bit is implied
 	} else
 	{
@@ -44,6 +46,6 @@ float fpwr2(int x)
 	//pack values into 32 bit value
 	
 	u = exp<<23|frac;
-	reutrn u2f(u);
+	return u2f(u);
 	
 }

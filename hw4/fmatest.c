@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdio.h>
 
 float
 f1 (float a, float b, float c)
