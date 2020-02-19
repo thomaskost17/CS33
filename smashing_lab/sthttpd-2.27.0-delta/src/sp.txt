@@ -1,0 +1,178 @@
+handle_read:
+.LFB20:
+	.cfi_startproc
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	movq	%rsi, %r13
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	movq	%rdi, %r12
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	movq	8(%rdi), %rbp
+	movq	160(%rbp), %rsi
+	movq	152(%rbp), %rdx
+	cmpq	%rdx, %rsi
+	jb	.L412
+	cmpq	$5000, %rdx
+	ja	.L436
+	addq	$1000, %rdx
+	leaq	152(%rbp), %rsi
+	leaq	144(%rbp), %rdi
+	call	httpd_realloc_str
+	movq	152(%rbp), %rdx
+	movq	160(%rbp), %rsi
+.L412:
+	movl	704(%rbp), %edi
+	subq	%rsi, %rdx
+	addq	144(%rbp), %rsi
+	call	read
+	testl	%eax, %eax
+	je	.L436
+	jns	.L415
+	call	__errno_location
+	movl	(%rax), %eax
+	cmpl	$4, %eax
+	je	.L411
+	cmpl	$11, %eax
+	je	.L411
+.L436:
+	movl	$.LC44, %r9d
+	movq	httpd_err400form(%rip), %r8
+	movl	$400, %esi
+	movq	%rbp, %rdi
+	movq	httpd_err400title(%rip), %rdx
+	movq	%r9, %rcx
+	call	httpd_send_err
+.L435:
+	popq	%rbp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	movq	%r13, %rsi
+	movq	%r12, %rdi
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	jmp	finish_connection
+	.p2align 4,,10
+	.p2align 3
+.L415:
+	.cfi_restore_state
+	cltq
+	addq	%rax, 160(%rbp)
+	movq	0(%r13), %rax
+	movq	%rbp, %rdi
+	movq	%rax, 88(%r12)
+	call	httpd_got_request
+	testl	%eax, %eax
+	je	.L411
+	cmpl	$2, %eax
+	je	.L436
+	movq	%rbp, %rdi
+	call	httpd_parse_request
+	testl	%eax, %eax
+	js	.L435
+	movq	%r12, %rdi
+	call	check_throttles
+	testl	%eax, %eax
+	je	.L437
+	movq	%r13, %rsi
+	movq	%rbp, %rdi
+	call	httpd_start_request
+	testl	%eax, %eax
+	js	.L435
+	movl	528(%rbp), %eax
+	testl	%eax, %eax
+	je	.L421
+	movq	536(%rbp), %rax
+	movq	%rax, 136(%r12)
+	movq	544(%rbp), %rax
+	addq	$1, %rax
+	movq	%rax, 128(%r12)
+.L422:
+	cmpq	$0, 712(%rbp)
+	je	.L438
+	movq	128(%r12), %rax
+	cmpq	%rax, 136(%r12)
+	jge	.L435
+	movq	0(%r13), %rax
+	movl	$2, (%r12)
+	movq	$0, 112(%r12)
+	movl	704(%rbp), %edi
+	movq	%rax, 80(%r12)
+	call	fdwatch_del_fd
+	movl	704(%rbp), %edi
+	movq	%r12, %rsi
+	popq	%rbp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	movl	$1, %edx
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	jmp	fdwatch_add_fd
+	.p2align 4,,10
+	.p2align 3
+.L411:
+	.cfi_restore_state
+	popq	%rbp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L437:
+	.cfi_restore_state
+	movq	208(%rbp), %r9
+	movq	httpd_err503form(%rip), %r8
+	movl	$.LC44, %ecx
+	movq	%rbp, %rdi
+	movq	httpd_err503title(%rip), %rdx
+	movl	$503, %esi
+	call	httpd_send_err
+	jmp	.L435
+	.p2align 4,,10
+	.p2align 3
+.L421:
+	movq	192(%rbp), %rax
+	movl	$0, %edx
+	testq	%rax, %rax
+	cmovs	%rdx, %rax
+	movq	%rax, 128(%r12)
+	jmp	.L422
+.L438:
+	movl	56(%r12), %eax
+	movq	200(%rbp), %rsi
+	testl	%eax, %eax
+	jle	.L427
+	subl	$1, %eax
+	movq	throttles(%rip), %rcx
+	leaq	16(%r12), %rdx
+	leaq	20(%r12,%rax,4), %rdi
+	.p2align 4,,10
+	.p2align 3
+.L426:
+	movslq	(%rdx), %rax
+	addq	$4, %rdx
+	leaq	(%rax,%rax,2), %rax
+	salq	$4, %rax
+	addq	%rsi, 32(%rcx,%rax)
+	cmpq	%rdx, %rdi
+	jne	.L426
+.L427:
+	movq	%rsi, 136(%r12)
+	jmp	.L435
+	.cfi_endproc
+.LFE20:
+	.size	handle_read, .-handle_read
+	.section	.rodata.str1.8
+	.align 8

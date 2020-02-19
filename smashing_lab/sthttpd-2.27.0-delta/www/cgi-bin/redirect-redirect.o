@@ -1,0 +1,254 @@
+	.file	"redirect.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"500 Internal Error"
+	.section	.rodata.str1.8,"aMS",@progbits,1
+	.align 8
+.LC1:
+	.string	"Status: %s\nContent-type: text/html\n\n<HTML><HEAD><TITLE>%s</TITLE></HEAD>\n<BODY><H2>%s</H2>\nSomething unusual went wrong during a redirection request:\n<BLOCKQUOTE>\n%s\n</BLOCKQUOTE>\n</BODY></HTML>\n"
+	.text
+	.p2align 4
+	.type	internal_error, @function
+internal_error:
+.LFB2:
+	.cfi_startproc
+	movl	$.LC0, %ecx
+	movq	%rdi, %r8
+	xorl	%eax, %eax
+	movl	$.LC1, %edi
+	movq	%rcx, %rdx
+	movq	%rcx, %rsi
+	jmp	printf
+	.cfi_endproc
+.LFE2:
+	.size	internal_error, .-internal_error
+	.section	.rodata.str1.1
+.LC2:
+	.string	"Moved"
+	.section	.rodata.str1.8
+	.align 8
+.LC3:
+	.string	"Location: %s\nContent-type: text/html\n\n<HTML><HEAD><TITLE>%s</TITLE></HEAD>\n<BODY><H2>%s</H2>\nThe requested filename, %s, has moved to a new URL:\n<A HREF=\"%s\">%s</A>.\n</BODY></HTML>\n"
+	.text
+	.p2align 4
+	.type	moved, @function
+moved:
+.LFB4:
+	.cfi_startproc
+	subq	$16, %rsp
+	.cfi_def_cfa_offset 24
+	movl	$.LC2, %ecx
+	movq	%rdi, %r8
+	movq	%rsi, %r9
+	pushq	%rsi
+	.cfi_def_cfa_offset 32
+	movq	%rcx, %rdx
+	movl	$.LC3, %edi
+	xorl	%eax, %eax
+	call	printf
+	addq	$24, %rsp
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE4:
+	.size	moved, .-moved
+	.section	.rodata.str1.1
+.LC4:
+	.string	"404 Not Found"
+	.section	.rodata.str1.8
+	.align 8
+.LC5:
+	.string	"Status: %s\nContent-type: text/html\n\n<HTML><HEAD><TITLE>%s</TITLE></HEAD>\n<BODY><H2>%s</H2>\nThe requested filename, %s, is set up to be redirected to another URL;\nhowever, the new URL has not yet been specified.\n</BODY></HTML>\n"
+	.text
+	.p2align 4
+	.type	not_found, @function
+not_found:
+.LFB3:
+	.cfi_startproc
+	movl	$.LC4, %ecx
+	movq	%rdi, %r8
+	xorl	%eax, %eax
+	movl	$.LC5, %edi
+	movq	%rcx, %rdx
+	movq	%rcx, %rsi
+	jmp	printf
+	.cfi_endproc
+.LFE3:
+	.size	not_found, .-not_found
+	.section	.rodata.str1.1
+.LC6:
+	.string	"SCRIPT_NAME"
+	.section	.rodata.str1.8
+	.align 8
+.LC7:
+	.string	"Couldn't get SCRIPT_NAME environment variable."
+	.section	.rodata.str1.1
+.LC8:
+	.string	"PATH_INFO"
+.LC9:
+	.string	"Out of memory."
+.LC10:
+	.string	"%s%s"
+.LC11:
+	.string	"r"
+.LC12:
+	.string	".redirects"
+	.section	.rodata.str1.8
+	.align 8
+.LC13:
+	.string	"Couldn't open .redirects file."
+	.section	.rodata.str1.1
+.LC14:
+	.string	" \t"
+.LC15:
+	.string	"%[^ \t\n] %[^ \t\n]"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB5:
+	.cfi_startproc
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	movl	$.LC6, %edi
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	subq	$15032, %rsp
+	.cfi_def_cfa_offset 15072
+	call	getenv
+	testq	%rax, %rax
+	je	.L30
+	movl	$.LC8, %edi
+	movq	%rax, %rbp
+	call	getenv
+	movq	%rax, %r12
+	testq	%rax, %rax
+	je	.L8
+	orq	$-1, %rsi
+	xorl	%eax, %eax
+	movq	%rbp, %rdi
+	movq	%rsi, %rcx
+	repnz scasb
+	movq	%r12, %rdi
+	notq	%rcx
+	movq	%rcx, %rdx
+	movq	%rsi, %rcx
+	repnz scasb
+	movq	%rcx, %rax
+	notq	%rax
+	leaq	-1(%rdx,%rax), %rdi
+	call	malloc
+	movq	%rax, %rbx
+	testq	%rax, %rax
+	je	.L31
+	movq	%rbp, %rdx
+	movq	%rax, %rdi
+	movq	%r12, %rcx
+	movl	$.LC10, %esi
+	xorl	%eax, %eax
+	movq	%rbx, %rbp
+	call	sprintf
+.L8:
+	movl	$.LC11, %esi
+	movl	$.LC12, %edi
+	call	fopen
+	movq	%rax, %rbx
+	testq	%rax, %rax
+	jne	.L12
+	jmp	.L32
+	.p2align 4,,10
+	.p2align 3
+.L14:
+	movl	$35, %esi
+	movq	%rsp, %rdi
+	call	strchr
+	testq	%rax, %rax
+	je	.L11
+	movb	$0, (%rax)
+.L11:
+	movq	%rsp, %rdi
+	movl	$.LC14, %esi
+	call	strspn
+	leaq	(%rsp,%rax), %rdi
+	cmpb	$0, (%rdi)
+	jne	.L33
+.L12:
+	movq	%rbx, %rdx
+	movl	$5000, %esi
+	movq	%rsp, %rdi
+	call	fgets
+	testq	%rax, %rax
+	jne	.L14
+	movq	%rbp, %rdi
+	call	not_found
+	movl	$1, %edi
+	call	exit
+.L33:
+	leaq	5008(%rsp), %r12
+	xorl	%eax, %eax
+	movl	$.LC15, %esi
+	leaq	10016(%rsp), %rcx
+	movq	%r12, %rdx
+	call	__isoc99_sscanf
+	cmpl	$2, %eax
+	jne	.L12
+	movl	$42, %esi
+	movq	%r12, %rdi
+	call	strchr
+	testq	%rax, %rax
+	je	.L13
+	subq	%r12, %rax
+	movq	%rbp, %rsi
+	movq	%r12, %rdi
+	movq	%rax, %rdx
+	movq	%rax, %r13
+	call	strncmp
+	testl	%eax, %eax
+	je	.L34
+.L13:
+	movq	%rbp, %rsi
+	movq	%r12, %rdi
+	call	strcmp
+	testl	%eax, %eax
+	jne	.L12
+.L29:
+	movq	%rbp, %rdi
+	leaq	10016(%rsp), %rsi
+	call	moved
+	xorl	%edi, %edi
+	call	exit
+.L30:
+	movl	$.LC7, %edi
+	call	internal_error
+	movl	$1, %edi
+	call	exit
+.L32:
+	movl	$.LC13, %edi
+	call	internal_error
+	movl	$1, %edi
+	call	exit
+.L34:
+	leaq	0(%rbp,%r13), %rsi
+	leaq	10016(%rsp), %rdi
+	call	strcat
+	jmp	.L29
+.L31:
+	movl	$.LC9, %edi
+	call	internal_error
+	movl	$1, %edi
+	call	exit
+	.cfi_endproc
+.LFE5:
+	.size	main, .-main
+	.ident	"GCC: (GNU) 9.2.0"
+	.section	.note.GNU-stack,"",@progbits

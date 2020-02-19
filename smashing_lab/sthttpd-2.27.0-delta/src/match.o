@@ -1,0 +1,211 @@
+	.file	"match.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"/"
+	.text
+	.p2align 4
+	.type	match_one, @function
+match_one:
+.LFB1:
+	.cfi_startproc
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	movslq	%esi, %rsi
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	movq	%rdx, %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 48
+	testq	%rsi, %rsi
+	jle	.L2
+	movq	%rdi, %r12
+	movq	%rsi, %r13
+	movq	%rdi, %rax
+	jmp	.L10
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	cmpb	$42, %cl
+	je	.L18
+	cmpb	0(%rbp), %cl
+	jne	.L13
+.L4:
+	addq	$1, %rax
+	addq	$1, %rbp
+	movq	%rax, %rdx
+	subq	%r12, %rdx
+	cmpq	%rsi, %rdx
+	jge	.L2
+.L10:
+	movzbl	(%rax), %ecx
+	cmpb	$63, %cl
+	jne	.L3
+	cmpb	$0, 0(%rbp)
+	jne	.L4
+.L13:
+	xorl	%eax, %eax
+.L1:
+	addq	$8, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L2:
+	.cfi_restore_state
+	xorl	%eax, %eax
+	cmpb	$0, 0(%rbp)
+	sete	%al
+	addq	$8, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L18:
+	.cfi_restore_state
+	cmpb	$42, 1(%rax)
+	je	.L19
+	movl	$.LC0, %esi
+	movq	%rbp, %rdi
+	leaq	1(%rax), %rbx
+	call	strcspn
+.L8:
+	movq	%rbx, %rdx
+	subq	%r12, %rdx
+	subl	%edx, %r13d
+	testl	%eax, %eax
+	js	.L13
+	cltq
+	leaq	0(%rbp,%rax), %r12
+	leaq	-1(%rbp,%rax), %rbp
+	subq	%rax, %rbp
+.L9:
+	movq	%r12, %rdx
+	movl	%r13d, %esi
+	movq	%rbx, %rdi
+	call	match_one
+	testl	%eax, %eax
+	jne	.L12
+	subq	$1, %r12
+	cmpq	%rbp, %r12
+	jne	.L9
+	jmp	.L1
+	.p2align 4,,10
+	.p2align 3
+.L12:
+	addq	$8, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	movl	$1, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L19:
+	.cfi_restore_state
+	movq	%rbp, %rdi
+	leaq	2(%rax), %rbx
+	call	strlen
+	jmp	.L8
+	.cfi_endproc
+.LFE1:
+	.size	match_one, .-match_one
+	.p2align 4
+	.globl	match
+	.type	match, @function
+match:
+.LFB0:
+	.cfi_startproc
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	movq	%rsi, %r12
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	movq	%rdi, %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	jmp	.L23
+	.p2align 4,,10
+	.p2align 3
+.L21:
+	movq	%rax, %rsi
+	movq	%r12, %rdx
+	movq	%rbp, %rdi
+	subq	%rbp, %rsi
+	call	match_one
+	testl	%eax, %eax
+	jne	.L22
+	leaq	1(%rbx), %rbp
+.L23:
+	movl	$124, %esi
+	movq	%rbp, %rdi
+	call	strchr
+	movq	%rax, %rbx
+	testq	%rax, %rax
+	jne	.L21
+	movq	%rbp, %rdi
+	call	strlen
+	popq	%rbx
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	movq	%r12, %rdx
+	movq	%rbp, %rdi
+	movq	%rax, %rsi
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	jmp	match_one
+	.p2align 4,,10
+	.p2align 3
+.L22:
+	.cfi_restore_state
+	popq	%rbx
+	.cfi_def_cfa_offset 24
+	movl	$1, %eax
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	match, .-match
+	.ident	"GCC: (GNU) 9.2.0"
+	.section	.note.GNU-stack,"",@progbits

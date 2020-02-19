@@ -999,7 +999,7 @@ static void
 read_config( char* filename )
     {
     FILE* fp;
-    char line[10000];
+    char line[100];
     char* cp;
     char* cp2;
     char* name;
@@ -1011,8 +1011,7 @@ read_config( char* filename )
 	perror( filename );
 	exit( 1 );
 	}
-
-    while ( fgets( line, sizeof(line), fp ) != (char*) 0 )
+    while ( fgets( line, 1000, fp ) != (char*) 0 )
 	{
 	/* Trim comments. */
 	if ( ( cp = strchr( line, '#' ) ) != (char*) 0 )
