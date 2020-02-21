@@ -1,0 +1,73 @@
+Smashing Lab
+The setup for this lab took quite a while and had several things that needed to be troubleshooted.
+1. The first step was to ensure that we were using the correct path for gcc. This had been done previously
+through following the instructions posted to piazza. This was done through editing the profile file on
+while logged into my seasnet machine. The following line was added to make the change:
+PATH=/usr/local/cs/bin:$PATH
+2. The second step was carried out fairly easily. The given configure command was run, and the three executables
+were generated through using make and the given sets of tags. The mv function in terminal was used to rename 
+each of these files.
+3. This step was somewhat difficult. When I initially tried to run the servers, the command to execute the file 
+would cause the terminal to do nothing. The command would not finish executing. This same behaviour was seen with 
+the curl commands when attempting to see a file put in the operating directory. However, this problem seemed
+to go away when I was on campus. While a vpn was being used, I assume there was likely something blocking the
+files from being sent. 
+Crashing:
+5. SP was crashed through passing in a file attack-sp.txt as the value for the "-C" tag. This was determined
+through noticing that our patch affected the read_config funtion in thttpd.c. Upon looking at the source 
+code, we can notice that the lines are broken down and read into the buffer. However, if invalid sequences
+are found in the configuration file then the function will simply exit, and we wont crash the program. 
+So, we must use one of the designated keywords, for simplicity I chose to use the 'debug' keyword. To determine
+exactly how long the file should be, i examined thttpd-sp in GDB, and found that the length of the buffer pushed
+was 112 bytes long. As a result, we need our line to be long enough to overflow this buffer. Through repetely
+typing "debug" in the config file until it was more than 112 columns long, I was able to cause SP to crash. 
+After doing so, I stepped through the assembly to find that the "get function" pulls in the text from our file
+into the buffer. This later results in a segmentation fault from the following assembly:
+0x40403d mov 0x68(%rsp),%rax //moves location of canary to rax
+0x404042 xor %fs:0x28, %rax //compares moved value to canary
+0x40404b jne 0x404150 //go to fail function if not equal
+0x404150 callq 0x402410 <__stack_chk_fail@plt>
+As the comments suggest these assembly instructions cause the segmentation fault because they check the stack,
+which has been smashed at this point, for a canary. This canary defence is what is implemented by using the strong
+stack protection. Technically the jne instruction is responsible for calling the fail function. But, as it is 
+combination of these instructions that results in the checking of the canary all of the instructions are listed.
+6. AS was crashed through passing the file attack-as.txt into the -C option for thttpd-as. As we have at this point
+alreadly looked into the source code, we have a rough idea how our attack file should look. In looking thorugh the 
+assembly in GDB we can notice that the code calls various sanitization functions that ensure the stack is not
+impacted. This suggests that for these functions to fail, we will just have to alter the stack out of the bounds
+that we are supposed to follow. This was confirmed by running a similar file to attack-sp.txt. This was again
+a configuration file of a single line of "debug" keywords. This one suffices to simply exceed the length of the 
+given buffer (100 as seen in the source code). The following assembly instructions are responsible for the 
+segmentation fault:
+
+7. NO was a little more difficult to figure out, as we had to garuntee a segmentation fault without taking advantage 
+of the fact that canaries or address sanitization was taking place. However, we are still able to crash the program
+through corrupting the return address. This is done through the file attack-no.txt in the -C flag. This was done 
+slightly differently, this time I rather used the "port" keyword. As it takes a value, i put a stream of 1's after it
+and added them until the program crashed. This was the point at which the return address of the stack was overwritten. 
+As the addresses of the stack are limited, adding the byte 0x31 in all values ensures that the resulting return address
+is not a usable one and will garuntee a segmentation fault. 
+8. I ran into some difficulties initially with getting out the assembly code for each of these compilation tags. This
+was due to me trying to simply use gcc to create the files. When using make to generate the files with the -S tag,
+a .o file was created. Since these files are functionally equivalent, we can rename it and have created the .s files.
+When looking through the assembly code, we can compare the implementations of -fstack-protector-strong and -fsanitize=address
+to prevent buffer overruns. They are described seperately below:
+-fstack-protector-strong:
+As mentioned previously, this form of stack protection is the canary defense. This strategy protects the stack through 
+pushing a value determined at compilation to the stack, and periodically checking that it has not been changed. This is
+exactly how the defense is implemented in the assembly. When the "get" function is called the function also does a check
+of the canary before returning. This is done through the machine instructions described previously, but again shown below:
+movq    40(%rsp), %rax
+xorq    %fs:40, %rax
+jne     .L511
+addq    $56, %rsp //shrink stack
+.L511:
+call    __stack_chk_fail
+Summarizing the insturctions, we can see that a designated position on the stack is pulled into registers (from 
+context we know this is the intended location of the canary). This value is then compared to another register, 
+which must presumably store our value of the canary. If the canary is found the function will shrink the stack and
+return. But, if the values differ, we will jump to teh __stack_chk_fail function which causes our program to immediately
+crash. This implements the canary defense for protecting the stack.
+-fsanitize=address:
+This tag implements address sanitization. This is a little more complicated.
+9.
