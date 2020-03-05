@@ -26,4 +26,10 @@
     This will prevent race conditions from affecting the results of the program. However, becuase of the byte_cnt
     variable the echo_cnt function is not reentrant. This is becaue its results depend on the value of the byte_cnt
     variable. As a result, it is dependent on the state of the machine when it is instantiated. Becuase of this,
-    threads calling the echo_cnt function will have a shared state.
+    threads calling the echo_cnt function will have a shared state. We can also note that while the function does call 
+    other functions that can write to buffers (e.g. Rio_readinitb(&rio, connfd);) these functions are passed local varaibles
+    to each thread. This means that the bytes of this buffer are held in the local stack for each thread, and so it can be 
+    accessed by the thread without worry about race conditions. We can also note that thread safety is a quality of the
+    entire program, and that this thread is safe because of the way in which it was implemented. That is that it avoids
+    shared states where possible, and properly uses mutex locks when shared states could be accessed. Becuase the entire
+    program respects these locks, the function can be considered thread safe.
