@@ -1,0 +1,29 @@
+12.17:
+    a: The behaviour is due to line 10 of the code. This line contains 'exit(0);'. This function call
+    causes the current process to end. This is called immediately after the thread is created.
+    Becuase our thread waits for one second before executing the print statement, we are essentially
+    garunteed that the machine will execute the exit(0) command before the thread executes its print
+    statement. Becuase the exit command stops the current process, all threads belongning to the
+    process are ended. This means that the thread is being ended before it can print out. Becuase 
+    threading allos for multiple core parallelism to take place, the exit command is allowed to be 
+    executed concurrently to the thread itself.
+
+    b: We can fix the bug in this code through replacing the 'exit(0);' line in our program. This can
+    be replaced with one of two different commands. They are as follows:
+        pthread_join(tid, NULL);
+        pthread_detatch(tid);
+    The first function will wait until the thread whose thread id is passed into the function ends.
+    The return value of the thread will be stored into the second argument, but since we do not have a
+    thread return value, we do not care about this and can pass in NULL. The second function will tell
+    the program to not wait for that thread. The thread will continue to execute, as will the rest of
+    the program but the thread will not be stopped. This will allow the main program to finsih and for
+    the thread to print out the value.
+
+12.25:
+    The echo_cnt function is thread safe in it's current implementation. However, it is not reentrant. It is thread
+    safe because it only accesses global varaibles after setting a mutex lock. As a mutex lock is just a binary 
+    semiphore, checking the mutex lock will ensure the the global variable byte_cnt is not accessed by mutliple threds.
+    This will prevent race conditions from affecting the results of the program. However, becuase of the byte_cnt
+    variable the echo_cnt function is not reentrant. This is becaue its results depend on the value of the byte_cnt
+    variable. As a result, it is dependent on the state of the machine when it is instantiated. Becuase of this,
+    threads calling the echo_cnt function will have a shared state.

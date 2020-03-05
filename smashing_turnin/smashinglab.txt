@@ -6,7 +6,9 @@ while logged into my seasnet machine. The following line was added to make the c
 PATH=/usr/local/cs/bin:$PATH
 2. The second step was carried out fairly easily. The given configure command was run, and the three executables
 were generated through using make and the given sets of tags. The mv function in terminal was used to rename 
-each of these files.
+each of these files. It should be noted at this point that the intended changes described in the patch were made to 
+read_config in the source code of thttpd.c. That is, we shortened the buffer, set a fixed size length for the
+get function, and made another function in libhttpd.c use memcpy instead of strcpy.
 3. This step was somewhat difficult. When I initially tried to run the servers, the command to execute the file 
 would cause the terminal to do nothing. The command would not finish executing. This same behaviour was seen with 
 the curl commands when attempting to see a file put in the operating directory. However, this problem seemed
@@ -90,7 +92,13 @@ which must presumably store our value of the canary. If the canary is found the 
 return. But, if the values differ, we will jump to the  __stack_chk_fail function which causes our program to immediately
 crash. This implements the canary defense for protecting the stack.
 -fsanitize=address:
-This tag implements address sanitization. This is a little more complicated.
+This tag implements address sanitization. This is a little more complicated. As we are not checking a single value. Rather,
+there are many new sanitization and intercepting functions that are called. These functions move addresses that are being accessed
+into registers and compare them to known values. This is checking if the buffer has accessed a poision zone of the stack. This zone is
+a region which is forbidden to be written to, ensuring that the stacks cannot smash. If the program writes over these values, address sanitization 
+functions will catch it and cause a segmentation fault. Again this is implemented through functions like __interceptor_fgets which will allow fgets to 
+occur but ensure that it cannot access the poisoned zones of the stack. These functions are called with user input to ensure that the stack
+is not overflown through a buffer. This is a little more labor intensive, but is extermely comprehensive in ensuring the stack is not overflown.
 
 9.Creating an exploit proved to be quite challenging. The most difficult part of which was determining what code we sould be returning to to cause the file
 "victim.txt" to be deleted. My initial thought was to inspect the source code and see if there were any helpful functions. This would be an approach of using
@@ -120,4 +128,5 @@ would start after 152 bytes. I confirmed this by creating a configuration file t
 bytes (it had 123..7891122...). I then instantiated the server with this file, and examined it through gdb. The last item popped before the return address contained the 
 bytes corresponding to 90000001, which suggested that the next value being the return address must start at offset 153. This is consistent with what we noticed from 
 the assembly code. We know that because we are on a little endian machine, this byte at 153 must be the least significant byte. As a result the last 8 bytes of our 
-exploit file corresponded to "af ff ff ff ff ff ff ff". The exploit.txt file used is also included to illustrate the exploit done.
+exploit file corresponded to "af ff ff ff ff ff ff ff". The exploit.txt file used is also included to illustrate the exploit done. Note, these files are included in the
+tarball for clarity on the process of creating this exploit. They actual bytes for the exploitation are laid out in exploit_bytes.txt. Note that for this file the space between the port keyword and the return address are essentially garbage 1's used for simplicity. 
