@@ -1,0 +1,155 @@
+OpenMP Lab:
+Thomas Kost UID:504989794
+
+This document is the report for the OpenMP lab for CS33. This will be broken down into a few sections, a general intorduciton describing my approach
+to the project and a more technical section describing the optimizations considered and chosen for the program. This will include a summary of 
+optimizations that were attempted but in reality did not show any improvement in performance. 
+
+Introduction:
+In this lab the goal was to achieve at least a 3.5X speedup on the functions contained in func.c. Given the initial state of func.c, I measured an 
+experimental average function time of 0.687 seconds. This gave me a baseline for the speed we were planning to achieve. I began by making the 
+source code with the GPROF=1 tag. Then by running the executable and then the command "gprof filter" I was able to inspect the gmon.out file.
+This file provides a detailed breakdown of the relative time the filter executable spend on each function. From this I was able to determine
+that func1 of the func.c file was a major contributor to the time the executable took. As a result, I began with optimizing func1. Once I was 
+able to achieve a speed up in this function, I continued with this process itteritively. That is, I would determine which function a speed up
+would most dramatically impact the exection speed and attempt to optimize this function. The optimizations came in the form of code movement and 
+parallelizations using the OpenMP library. I should also note that after each optimization I would also use the MTRACE=1 option to generate a trace
+file and would then run the "make checkmem" command in terminal. This checked for any memory leaks, ensuring the program remained free of memory
+leaks. After several rounds of optimization I was able to achieve an experimental function time of 0.1147 seconds. This means the optimizations 
+resulted in a speed up of 5.986. This was found through running the executable 10 times on linux server 06, and taking the average time. 
+
+Technical Explanations: 
+NOTE: for the descriptions below, the code reflects that the omp_set_num_threads(64) function has been pulled into the omp parallel satements 
+using the clause num_threads(64). This was done to accomidate with the new method of grading. That is, the functions were pulled in so that
+seq could be compiled to check for memory leaks.
+Func0:
+This function was fairly short, but we were still able to add a few optimizations to imporve performance:
+	Parallelism:
+	   We were able to use some of the OpenMP functions to ensure this function was able to run faster. This was done through putting the 
+	for loop in the function in an omp parallel for block. Given that we know the loop will be called many times (N is 512 from inspecting
+	main), we want to ensure that many threads are generated to minimize the effect of our overhead of generating and reaping threads. To do
+	this we preceede our parallel block with the statement "omp_set_num_threads(64)". 64 was found to be the best number of threads to create,
+	as 128 appeared to be unstable (could cause crashing). This did not result in a significant speedup, this suggests that the overhead of 
+	generating the threads was greater than simply assigning the values to each index. As a result, this optimization was not used.
+
+	Code Hoisting:
+	   I also noticed that the program was repeatedly doing a double division to assign to each index of the weights matrix. As this value never
+	changed, we were able to move the calculation outside of the loop and simply assign a variable to. This allows for the program to only
+	perform the calculation once. This means that we were able to replace a many clock cycle operation with a simple assignment. This resulted in 
+	a mild speedup. 
+Func1:
+This function was more complicated and thus several forms of optimiztion were able to be done, each of which contributed greatly to the overall
+perfomance. Additionally, as this was our most time intensive function at start, imporvements to this function greatly impacted our overall function
+time:
+	Parallelism:
+	   A major part of speeding up this program came from putting the large double loop of func1 to be in parallel. This was a little more complex
+	to do without introducing errors into the program. We must notice that the variables j, index_X, and index_Y are all declared outside of the
+	loop. This means that if we are trying to do parts of the loop in parallel we must make these varaibles private to each thread. This means
+	that we must ensure that the threads do not use the same copies of the variable--preventing them from stepping on each other's toes by writing
+	to the same variable. This was done through putting the entire loop in the following omp block: "#pragma omp parallel for private(j, index_X,
+	index_Y)". This allowed the program to execute this parallelism properly and resulted in a speedup of more than 2. This was later improved upon 
+	by adding the line: "omp_set_num_threads(64);" aboce the parallel block. This increased the number of threads, and further sped up the program.
+	This was a very significant optimization and thus was kept. 
+
+	Code Hoisting/Combining:
+	   Code hoisiting was also used to help optimize this function. This was done through noting that the expression j*2 was repeatedly used in the 
+	inner loops, meaning that it would be executed many times. This was pulled to the top of the loop in a varaible named jx2. This ensured that the 
+	program would only caluclate the value once per loop. This resulted in a small improvement to performance. Considering that this portion of the
+	program was also placed in parallel, small improvements to loop execution appeared more significant in the overall time, and thus this change 
+	actually created a noticeable difference in execution time. 
+	   I also noticed that the first for loop of the function only accessed the ith index of arrayX and arrayY. Additionally, the nested set of for
+	loops also only ever accessed the ith index of these arrays. Both loops had the same bounds, which meant that the loops could be combined to 
+	improve performance. Pulling them just inside the outer for loop of the nested set eliminated the need to loop through N times seperate to 
+	the N loops later done. Doing this made a very noticable improvement to performance (this optimization is what actually what first got me 
+	past the 3.5X speedup minimum). Especially because the bottom loop was executing in parallel , this allowed the entirety of the function to
+	execute at once in parallel.
+Func2:
+while this function is short, at one point during the optimization it was our bottleneck, so it was worthwhile investigating optimizations for the 
+function.
+	Parallelism:
+	   I atempted to apply some of the OpenMP parallelism to this function again using the parallel for loop syntax, and then again with setting
+	the number of threads created to 64. However, this function proved to be more efficent without parallel exection. This makes sense as the 
+	operations done in each loop are relatively simple, and as we saw in func0, it was likely more efficent to just do the operations. I later tried
+	to put the loops in parallel once I had combined the loops (described below), but found the same result of the function being more efficent 
+	without the overhead of the threads. We can speculate that if N was larger, parallelism could be more effective as there would be more work to do.
+	
+	Code Hoisting/Combining:
+	   This technique proved to be most effective for this function. I noticed that the first for loop only sets the value of the ith index of the 
+	weights array and that the second loop only depends on th ith index of the weights array to determine sumWeights. As before, the bounds of these
+	loops was the same aswell. This meant that we can combine these loops into a single loop. Doing this means that we are not spending cpu cycles
+	cycling through loops to do a single operation. Doing this greatly improved the performance of func2. It made func2 no longer the bottle neck of
+	our exection. Unfortunately, we cannot do this with the third loop, as it requires the final value of sumWeights.
+Func3:
+This function was quite short, I tried to find some possible optimiztions. However, most optimizations did not create a significant difference. 
+	Parallelism:
+	   I attempted to implement parallelism in this function by using a"#pragma omp parallel for" statement. While this worked, it did not improve
+	performance. Additionally, this function was quite small and not a bottleneck, so optimization was not a huge concern. So parallelism was 
+	dropped as a good form of optimization for this function. 
+	Loop Unwrapping:
+	   I also attempted loop unwrapping. As stated before, in inspecting main, I noticed that N was a power of 2. This meant that the loops could be
+	unwrapped to imporve performance. This did not provide a large boost to performance, but it did improve some. This optimization was not a large
+	one in the grand scheme of the program, but it was helpful in seeing that loop unrolling can be a beneficical way to speedup the execition of a 
+	loop. It was also good to practice the optimizations we learned earlier in the class.
+	
+Func4:
+This function was very short and did not lend itself to parallel exection nor did it lend itself to code movement optimiztions. As a result, this function
+did not have any optimizations applied to it. This choice was supported by the gmon.out files generated from the executables. There was not a point in
+which the function func4 became a bottleneck of the program. As a result, its quick execution was not deemed an effective place in the program to
+optimize.
+ 
+Func5:
+This function had several for loops in which I was able to create some slight performace improvements ensureing that this function was not the bottleneck
+of the program. 
+	Parallelism: 
+	   Both loops contained several assignments and did not have a shared state. This made them good candidates for multithreading parallelism. 
+	This was done on each loop to make the execution occur faster. This was done thorugh the following lines:
+			omp_set_num_threads(64);
+			#pragma omp parallel for
+	These lines were placed above each of the for loops. Doing so improved the execution time of the function. This caused the function to no longer 
+	be a bottleneck to the program.
+	Code Hoisting:
+	   This was a small optimization but did cause a slight improvement to the performance of the program. I noticed that in the second loop each
+	index of the weights matrix was being set to a constant value of 1/N. So I created a variable outside of the loop that contained this value,
+	which prevents the program from unnecessarily performing that calculation. Rather, like in func0, the loop only has to do an assignment rather
+	than a double division. This improved performance slightly.
+	
+Other avenues investigated:
+The main other avenue investigated was that of loop unwrapping. This was done mostly because after investigating the main program, I found out that N
+was a power of 2. This meant that any of the loops using N as a bound (and there were quite a few of them) would be a candidate for loop unwrapping.
+
+Memory leaks:
+This has proved to be the most difficult part of the lab by far. In using the OMP library syntax how it is shown, the code produces 6 memory leaks. 
+Note, that as these memory leaks due to the creation of threads are no longer being counted against our grade, this section of the report is
+not necessarily the most relevant. However, it does describe the trouble shooting avenues that were taken in an attempt to eliminate the memory leaks.
+Additionally, you will notice when running that many more than 6 memory leaks appear. This is because the leaks, no longer being counted against our
+grade, are worthwhile to create to improve performance. That is, that we are free to create more threads for the purpose of improving our speedup without
+concern for minimizing the unsolved leaks. 
+
+The first approach I took was to go through the OpenMP API. In looking through it I found several avenues to take. One route was to explicitly make
+the arrays in the block explicitly declared to be shared. The hope here was to prevent the arrays from being coppied, if they were the source of the 
+memory leak. After this, I attemted to change the scheduling in hopes that a stricter schedule would prevent the threads from doing an unwanted copy.
+I went through a few of these attempts. At this point I took a closer look at the memory leak itself. I noticed that the trace file suggested the
+linux kernel was doing all of the allocations that were not deallocated. These all occured after some allocations for the OMP libraray itself. This 
+suggested that these leaks could simply be the threads themselves not being deallocated. 
+
+At this point I used the valgrind tool to check the memory, and see if I could find a function trace that would give me a clue as to what functions
+are which are allocating the memory. This suggested that the leak came from the following train of functions:
+------------------
+func1
+GOMP_parallel
+pthread_create
+allocate_stack
+_dl_allocate_tls
+allocate_dtv
+calloc
+-----------------
+This confirmed that it was the threads themselves that were not being deallocated. Knowing that the threads and their thread id's were leaking lead to
+more attempts to fix the leak. The first of which was going back to the api. I attempted to control which omp allocator was used for the allocation of
+threads in the"#pragama omp parallel for" statements. The hope was that the omp_init_allocator and the omp_destroy_allocator functions would allow us to 
+ensure that all the memory allocated for the threads would be released. However, the code would not compile with these functions. It is my guess that
+thats because these are runtime library routines, so we may not have access to these files. After this I looked more into how to stop these memory leaks. 
+Some post suggested to use the line omp_set_dynamic(4). this also had no impact on the memory leaks. I suspect that there must be some builtin function
+within either the c library or the omp library that will release the memory of threads. However, I could not find any documentation for using such a 
+function. Additionally, some sources online suggested that some of the memory leaks could not be actual memory leaks. This would be the leaks that are
+called "still reachable" by the valgrind tool. These sources suggested that these leaks arise because of memory that is allocated and will be deallocated,
+but that the valgrind tool deems to be an issue. It was suggested that these leaks could simply be a misunderstanding between the software packages.
